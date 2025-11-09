@@ -1,24 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FeriaAgricolaApp.Models
+﻿namespace FeriaAgricolaApp.Models
 {
     public class Feria
     {
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string Localidad { get; set; }
-        public string Horario { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id">El id de la feria</param>
+        /// <param name="nombre">El nombre de la feria</param>
+        /// <param name="localidad">La localidad de la feria</param>
+        /// <param name="horario">El horario de la feria</param>
         public Feria(int id, string nombre, string localidad, string horario)
         {
-            this.id = id;
-            this.nombre = nombre;
-            Localidad = localidad;
-            Horario = horario;
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Localidad = localidad;
+            this.Horario = horario;
         }
+
+        /// <summary>
+        /// Gets y sets el id de la feria.
+        /// </summary>
+        /// <value>
+        /// El stock del producto.
+        /// </value>
+        public int Id { get; set; } = 0;
+
+        /// <summary>
+        /// Gets y sets el id de la feria.
+        /// </summary>
+        /// <value>
+        /// El stock del producto.
+        /// </value>
+        public string Nombre { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets y sets el id de la feria.
+        /// </summary>
+        /// <value>
+        /// El stock del producto.
+        /// </value>
+        public string Localidad { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets y sets el id de la feria.
+        /// </summary>
+        /// <value>
+        /// El stock del producto.
+        /// </value>
+        public string Horario { get; set; } = string.Empty; 
+
+        /// <summary>
+        /// Convierte a String
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> que representa esta instancia.
+        /// </returns>
+        public override string ToString()
+        {
+            return $"{this.Id},{this.Nombre},{this.Localidad},{Environment.NewLine}";
+        }
+
     }
 }
