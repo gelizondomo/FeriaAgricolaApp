@@ -8,11 +8,12 @@
         /// <param name="id">El id proveedor</param>
         /// <param name="nombre">El nombre proveedor</param>
         /// <param name="feriaId"> El id de la feria</param>
-        public Proveedor(int id, string nombre, int feriaId)
+        public Proveedor(int id, string nombre, int feriaId, List<Producto> productos)
         {
             this.Id = id;
             this.Nombre = nombre;
             this.FeriaId = feriaId;
+            this.Productos = new List<Producto>();
         }
 
         /// <summary>
@@ -39,6 +40,14 @@
         /// </value>
         public int FeriaId { get; set; } = 0;
 
+        /// <summary>
+        /// Gets y sets los productos.
+        /// </summary>
+        /// <value>
+        /// Los productos.
+        /// </value>
+        public List<Producto> Productos { get; set; } = new List<Producto>();
+
 
         /// <summary>
         /// Convierte a String
@@ -48,7 +57,7 @@
         /// </returns>
         public override string ToString()
         {
-            return $"{this.Id},{this.Nombre},{this.FeriaId}{Environment.NewLine}";
+            return $"{this.Id},{this.Nombre},{this.FeriaId},{Environment.NewLine}";
         }
     }
 }
