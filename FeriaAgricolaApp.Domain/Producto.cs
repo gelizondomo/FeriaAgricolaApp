@@ -43,7 +43,7 @@
         /// <value>
         /// El precio del producto.
         /// </value>
-        public decimal Precio { get; set; } = decimal.Zero;
+        public decimal Precio { get; set; }
 
         /// <summary>
         /// Gets y sets la unidadMedida del producto.

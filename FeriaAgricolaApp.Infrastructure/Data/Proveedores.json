@@ -7,7 +7,7 @@
   {
     "Id": 2,
     "Nombre": "Verduras de la Tierra",
-    "FeriaId": 1
+    "FeriaId": 7
   },
   {
     "Id": 3,
@@ -52,7 +52,7 @@
   {
     "Id": 11,
     "Nombre": "Artesanías Ticas",
-    "FeriaId": 2
+    "FeriaId": 7
   },
   {
     "Id": 12,
@@ -92,7 +92,7 @@
   {
     "Id": 19,
     "Nombre": "La Cosecha de Don Luis",
-    "FeriaId": 1
+    "FeriaId": 6
   },
   {
     "Id": 20,
@@ -132,7 +132,7 @@
   {
     "Id": 27,
     "Nombre": "Delicias del Mar",
-    "FeriaId": 5
+    "FeriaId": 7
   },
   {
     "Id": 28,
@@ -142,7 +142,7 @@
   {
     "Id": 29,
     "Nombre": "Productos del Bosque",
-    "FeriaId": 2
+    "FeriaId": 6
   },
   {
     "Id": 30,

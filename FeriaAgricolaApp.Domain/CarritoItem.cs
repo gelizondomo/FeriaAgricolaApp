@@ -6,21 +6,6 @@
     public class CarritoItem
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="CarritoItem"/>.
-        /// </summary>
-        /// <param name="productoId">Id del producto.</param>
-        /// <param name="nombreProducto">Nombre del producto.</param>
-        /// <param name="cantidad">Cantidad del producto en el carrito.</param>
-        /// <param name="precioUnitario">Precio unitario del producto.</param>
-        public CarritoItem(int productoId, string nombreProducto, int cantidad, decimal precioUnitario)
-        {
-            ProductoId = productoId;
-            NombreProducto = nombreProducto;
-            Cantidad = cantidad;
-            PrecioUnitario = precioUnitario;
-        }
-
-        /// <summary>
         /// Gets y sets el Id del producto.
         /// </summary>
         /// <value>

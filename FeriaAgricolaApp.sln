@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Application", "FeriaAgricolaAppControllers\FeriaAgricolaApp.Application.csproj", "{74D5E40D-BEAD-4F24-BB80-53D6F20C6CF6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Domain", "FeriaAgricolaApp.Domain\FeriaAgricolaApp.Domain.csproj", "{14793AC5-C77B-46A9-A9EE-DBF562CECDCB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Infrastructure", "FeriaAgricolaApp.Infrastructure\FeriaAgricolaApp.Infrastructure.csproj", "{0A874BDB-D302-46DB-836C-05D9BC0DCB58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Presentation", "FeriaAgricolaApp.Presentation\FeriaAgricolaApp.Presentation.csproj", "{704698E3-38DB-4674-8D5E-77F6A61BDAA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Application", "FeriaAgricolaApp.Application\FeriaAgricolaApp.Application.csproj", "{5D8AA76E-0465-4DE8-9CE3-210508C26F21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{74D5E40D-BEAD-4F24-BB80-53D6F20C6CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74D5E40D-BEAD-4F24-BB80-53D6F20C6CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74D5E40D-BEAD-4F24-BB80-53D6F20C6CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74D5E40D-BEAD-4F24-BB80-53D6F20C6CF6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14793AC5-C77B-46A9-A9EE-DBF562CECDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14793AC5-C77B-46A9-A9EE-DBF562CECDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14793AC5-C77B-46A9-A9EE-DBF562CECDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{704698E3-38DB-4674-8D5E-77F6A61BDAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{704698E3-38DB-4674-8D5E-77F6A61BDAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{704698E3-38DB-4674-8D5E-77F6A61BDAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8AA76E-0465-4DE8-9CE3-210508C26F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8AA76E-0465-4DE8-9CE3-210508C26F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8AA76E-0465-4DE8-9CE3-210508C26F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8AA76E-0465-4DE8-9CE3-210508C26F21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

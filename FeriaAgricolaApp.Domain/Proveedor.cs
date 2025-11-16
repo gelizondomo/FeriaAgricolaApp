@@ -3,20 +3,6 @@
     public class Proveedor
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Proveedor"/> class.
-        /// </summary>
-        /// <param name="id">El id proveedor</param>
-        /// <param name="nombre">El nombre proveedor</param>
-        /// <param name="feriaId"> El id de la feria</param>
-        public Proveedor(int id, string nombre, int feriaId, List<Producto> productos)
-        {
-            Id = id;
-            Nombre = nombre;
-            FeriaId = feriaId;
-            Productos = new List<Producto>();
-        }
-
-        /// <summary>
         /// Gets y sets el id proveedor.
         /// </summary>
         /// <value>
@@ -33,12 +19,12 @@
         public string Nombre { get; set; } = string.Empty;
 
         /// <summary>
-        /// Gets y sets el id de la feria.
+        /// Gets y sets de la feria.
         /// </summary>
         /// <value>
-        /// El id de la feria.
+        /// La  feria.
         /// </value>
-        public int FeriaId { get; set; } = 0;
+        public string Feria { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets y sets los productos.
@@ -48,16 +34,5 @@
         /// </value>
         public List<Producto> Productos { get; set; } = new List<Producto>();
 
-
-        /// <summary>
-        /// Convierte a String
-        /// </summary>
-        /// <returns>
-        /// A <see cref="string" /> que representa esta instancia.
-        /// </returns>
-        public override string ToString()
-        {
-            return $"{Id},{Nombre},{FeriaId},{Environment.NewLine}";
-        }
     }
 }

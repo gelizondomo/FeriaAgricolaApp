@@ -6,12 +6,20 @@
     public class Direccion
     {
         /// <summary>
-        /// Gets y sets la provicia.
+        /// Gets y sets la provincia.
         /// </summary>
         /// <value>
-        /// La provicia.
+        /// La provincia.
         /// </value>
-        public string Provicia { get; set; } = string.Empty;
+        public string Provincia { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets y sets el cantón.
+        /// </summary>
+        /// <value>
+        /// El Cantón.
+        /// </value>
+        public string Canton { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets y sets el distrito.
@@ -36,5 +44,10 @@
         ///   <c>true</c> si esta instancia es principal; de lo contrario, <c>false</c>.
         /// </value>
         public bool EsPrincipal { get; set; } = false;
+
+        public override string ToString()
+        {
+            return $"{DireccionCompleta} - {Provincia}/{Canton}/{Distrito}";
+        }
     }
 }
