@@ -25,6 +25,18 @@
   },
   {
     "Id": 5,
+    "Nombre": "Feria de Puntarenas",
+    "Localidad": "Puntarenas",
+    "Horario": "7am - 1pm"
+  }
+  {
+    "Id": 6,
+    "Nombre": "Feria de Guanacaste",
+    "Localidad": "Guanacaste",
+    "Horario": "7am - 12pm"
+  }
+  {
+    "Id": 7,
     "Nombre": "Feria de Limón",
     "Localidad": "Limón",
     "Horario": "7am - 1pm"

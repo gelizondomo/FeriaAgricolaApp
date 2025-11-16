@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FeriaAgricolaAppControllers\FeriaAgricolaApp.Application.csproj" />
+    <ProjectReference Include="..\FeriaAgricolaApp.Application\FeriaAgricolaApp.Application.csproj" />
+    <ProjectReference Include="..\FeriaAgricolaApp.Domain\FeriaAgricolaApp.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
