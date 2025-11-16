@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Feria Central de San José",
+    "Localidad": "San José",
+    "Horario": "6am - 2pm"
+  },
+  {
+    "Id": 2,
+    "Nombre": "Feria del Agricultor de Alajuela",
+    "Localidad": "Alajuela",
+    "Horario": "7am - 1pm"
+  },
+  {
+    "Id": 3,
+    "Nombre": "Feria Verde de Cartago",
+    "Localidad": "Cartago",
+    "Horario": "8am - 12pm"
+  },
+  {
+    "Id": 4,
+    "Nombre": "Feria de Heredia Centro",
+    "Localidad": "Heredia",
+    "Horario": "6am - 2pm"
+  },
+  {
+    "Id": 5,
+    "Nombre": "Feria de Limón",
+    "Localidad": "Limón",
+    "Horario": "7am - 1pm"
+  }
+]
