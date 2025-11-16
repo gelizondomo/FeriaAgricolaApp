@@ -1,4 +1,4 @@
-﻿namespace FeriaAgricolaApp.Models
+﻿namespace FeriaAgricolaApp.Domain
 {
     public class Feria
     {
@@ -11,10 +11,10 @@
         /// <param name="horario">El horario de la feria</param>
         public Feria(int id, string nombre, string localidad, string horario)
         {
-            this.Id = id;
-            this.Nombre = nombre;
-            this.Localidad = localidad;
-            this.Horario = horario;
+            Id = id;
+            Nombre = nombre;
+            Localidad = localidad;
+            Horario = horario;
         }
 
         /// <summary>
@@ -47,17 +47,17 @@
         /// <value>
         /// El stock del producto.
         /// </value>
-        public string Horario { get; set; } = string.Empty; 
+        public string Horario { get; set; } = string.Empty;
 
         /// <summary>
         /// Convierte a String
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> que representa esta instancia.
+        /// A <see cref="string" /> que representa esta instancia.
         /// </returns>
         public override string ToString()
         {
-            return $"{this.Id},{this.Nombre},{this.Localidad},{this.Horario}{Environment.NewLine}";
+            return $"{Id},{Nombre},{Localidad},{Horario}{Environment.NewLine}";
         }
 
     }

@@ -1,0 +1,162 @@
+[
+  {
+    "Id": 101,
+    "Nombre": "Manzana Roja",
+    "Precio": 1500,
+    "UnidadMedida": "kg",
+    "Stock": 50,
+    "ProveedorId": 2
+  },
+  {
+    "Id": 102,
+    "Nombre": "Plátano",
+    "Precio": 800,
+    "UnidadMedida": "kg",
+    "Stock": 100,
+    "ProveedorId": 2
+  },
+  {
+    "Id": 103,
+    "Nombre": "Café en Grano",
+    "Precio": 5000,
+    "UnidadMedida": "kg",
+    "Stock": 20,
+    "ProveedorId": 1
+  },
+  {
+    "Id": 104,
+    "Nombre": "Leche Entera",
+    "Precio": 1200,
+    "UnidadMedida": "l",
+    "Stock": 60,
+    "ProveedorId": 10
+  },
+  {
+    "Id": 105,
+    "Nombre": "Queso Fresco",
+    "Precio": 2500,
+    "UnidadMedida": "kg",
+    "Stock": 30,
+    "ProveedorId": 9
+  },
+  {
+    "Id": 106,
+    "Nombre": "Miel de Abeja",
+    "Precio": 3500,
+    "UnidadMedida": "ml",
+    "Stock": 40,
+    "ProveedorId": 10
+  },
+  {
+    "Id": 107,
+    "Nombre": "Pan Integral",
+    "Precio": 1000,
+    "UnidadMedida": "unidad",
+    "Stock": 80,
+    "ProveedorId": 4
+  },
+  {
+    "Id": 108,
+    "Nombre": "Tomate",
+    "Precio": 900,
+    "UnidadMedida": "kg",
+    "Stock": 70,
+    "ProveedorId": 2
+  },
+  {
+    "Id": 109,
+    "Nombre": "Zanahoria",
+    "Precio": 700,
+    "UnidadMedida": "kg",
+    "Stock": 90,
+    "ProveedorId": 2
+  },
+  {
+    "Id": 110,
+    "Nombre": "Pescado Tilapia",
+    "Precio": 4500,
+    "UnidadMedida": "kg",
+    "Stock": 25,
+    "ProveedorId": 7
+  },
+  {
+    "Id": 111,
+    "Nombre": "Flor de Jamaica",
+    "Precio": 1800,
+    "UnidadMedida": "bolsa",
+    "Stock": 35,
+    "ProveedorId": 8
+  },
+  {
+    "Id": 112,
+    "Nombre": "Lechuga Romana",
+    "Precio": 600,
+    "UnidadMedida": "unidad",
+    "Stock": 60,
+    "ProveedorId": 6
+  },
+  {
+    "Id": 113,
+    "Nombre": "Frijoles Negros",
+    "Precio": 1200,
+    "UnidadMedida": "kg",
+    "Stock": 50,
+    "ProveedorId": 1
+  },
+  {
+    "Id": 114,
+    "Nombre": "Arroz Blanco",
+    "Precio": 1000,
+    "UnidadMedida": "kg",
+    "Stock": 100,
+    "ProveedorId": 1
+  },
+  {
+    "Id": 115,
+    "Nombre": "Piña",
+    "Precio": 1200,
+    "UnidadMedida": "unidad",
+    "Stock": 40,
+    "ProveedorId": 3
+  },
+  {
+    "Id": 116,
+    "Nombre": "Guayaba",
+    "Precio": 1300,
+    "UnidadMedida": "kg",
+    "Stock": 30,
+    "ProveedorId": 3
+  },
+  {
+    "Id": 117,
+    "Nombre": "Pan Dulce",
+    "Precio": 900,
+    "UnidadMedida": "unidad",
+    "Stock": 70,
+    "ProveedorId": 4
+  },
+  {
+    "Id": 118,
+    "Nombre": "Jugos Naturales",
+    "Precio": 1500,
+    "UnidadMedida": "botella",
+    "Stock": 45,
+    "ProveedorId": 12
+  },
+  {
+    "Id": 119,
+    "Nombre": "Semillas de Chía",
+    "Precio": 2000,
+    "UnidadMedida": "bolsa",
+    "Stock": 20,
+    "ProveedorId": 13
+  },
+  {
+    "Id": 120,
+    "Nombre": "Huevos Orgánicos",
+    "Precio": 2500,
+    "UnidadMedida": "docena",
+    "Stock": 50,
+    "ProveedorId": 14
+  }
+]

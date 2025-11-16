@@ -1,0 +1,352 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Juan Araya",
+    "Email": "juan@email.com",
+    "Password": "password123",
+    "Telefono": 88881111
+  },
+  {
+    "Id": 2,
+    "Nombre": "Maria Solano",
+    "Email": "maria@email.com",
+    "Password": "securepass",
+    "Telefono": 88882222
+  },
+  {
+    "Id": 3,
+    "Nombre": "Andrés Mora",
+    "Email": "andresm@email.com",
+    "Password": "pass456",
+    "Telefono": 88883333
+  },
+  {
+    "Id": 4,
+    "Nombre": "Lucía Vargas",
+    "Email": "lvargas@email.com",
+    "Password": "clave789",
+    "Telefono": 88884444
+  },
+  {
+    "Id": 5,
+    "Nombre": "Pedro Jiménez",
+    "Email": "pjimenez@email.com",
+    "Password": "abc123",
+    "Telefono": 88885555
+  },
+  {
+    "Id": 6,
+    "Nombre": "Laura Chaves",
+    "Email": "lchaves@email.com",
+    "Password": "laura2023",
+    "Telefono": 88886666
+  },
+  {
+    "Id": 7,
+    "Nombre": "Daniel Soto",
+    "Email": "dsoto@email.com",
+    "Password": "danielpass",
+    "Telefono": 88887777
+  },
+  {
+    "Id": 8,
+    "Nombre": "Carla Rojas",
+    "Email": "crojas@email.com",
+    "Password": "carla321",
+    "Telefono": 88888888
+  },
+  {
+    "Id": 9,
+    "Nombre": "Esteban Céspedes",
+    "Email": "esteban@email.com",
+    "Password": "estebanpass",
+    "Telefono": 88889999
+  },
+  {
+    "Id": 10,
+    "Nombre": "Mariana López",
+    "Email": "mlopez@email.com",
+    "Password": "mariana456",
+    "Telefono": 88990000
+  },
+  {
+    "Id": 11,
+    "Nombre": "José Pérez",
+    "Email": "jperez@email.com",
+    "Password": "secure456",
+    "Telefono": 88991111
+  },
+  {
+    "Id": 12,
+    "Nombre": "Valeria Méndez",
+    "Email": "vmendez@email.com",
+    "Password": "valepass",
+    "Telefono": 88992222
+  },
+  {
+    "Id": 13,
+    "Nombre": "Diego Castro",
+    "Email": "dcastro@email.com",
+    "Password": "dieguito",
+    "Telefono": 88993333
+  },
+  {
+    "Id": 14,
+    "Nombre": "Isabel Ramírez",
+    "Email": "iramirez@email.com",
+    "Password": "isa123",
+    "Telefono": 88994444
+  },
+  {
+    "Id": 15,
+    "Nombre": "Roberto Céspedes",
+    "Email": "rcespedes@email.com",
+    "Password": "roberpass",
+    "Telefono": 88995555
+  },
+  {
+    "Id": 16,
+    "Nombre": "Andrea Mora",
+    "Email": "amora@email.com",
+    "Password": "andrea2023",
+    "Telefono": 88996666
+  },
+  {
+    "Id": 17,
+    "Nombre": "Carlos Rojas",
+    "Email": "crojas2@email.com",
+    "Password": "carlitos",
+    "Telefono": 88997777
+  },
+  {
+    "Id": 18,
+    "Nombre": "Paola Jiménez",
+    "Email": "pjimenez2@email.com",
+    "Password": "paopass",
+    "Telefono": 88998888
+  },
+  {
+    "Id": 19,
+    "Nombre": "David Solano",
+    "Email": "dsolano@email.com",
+    "Password": "davidpass",
+    "Telefono": 88999999
+  },
+  {
+    "Id": 20,
+    "Nombre": "Marcela Vargas",
+    "Email": "mvargas@email.com",
+    "Password": "marce123",
+    "Telefono": 88770000
+  },
+  {
+    "Id": 21,
+    "Nombre": "Kevin Araya",
+    "Email": "karaya@email.com",
+    "Password": "kevinpass",
+    "Telefono": 88771111
+  },
+  {
+    "Id": 22,
+    "Nombre": "Natalia Chaves",
+    "Email": "nchaves@email.com",
+    "Password": "natpass",
+    "Telefono": 88772222
+  },
+  {
+    "Id": 23,
+    "Nombre": "José Luis",
+    "Email": "jluis@email.com",
+    "Password": "jlpass",
+    "Telefono": 88773333
+  },
+  {
+    "Id": 24,
+    "Nombre": "Daniela Soto",
+    "Email": "dsoto2@email.com",
+    "Password": "dani456",
+    "Telefono": 88774444
+  },
+  {
+    "Id": 25,
+    "Nombre": "Andrey Rojas",
+    "Email": "arojas@email.com",
+    "Password": "andreypass",
+    "Telefono": 88775555
+  },
+  {
+    "Id": 26,
+    "Nombre": "Melissa López",
+    "Email": "mlopez2@email.com",
+    "Password": "melipass",
+    "Telefono": 88776666
+  },
+  {
+    "Id": 27,
+    "Nombre": "Jonathan Pérez",
+    "Email": "jperez2@email.com",
+    "Password": "jonpass",
+    "Telefono": 88777777
+  },
+  {
+    "Id": 28,
+    "Nombre": "Karina Méndez",
+    "Email": "kmendez@email.com",
+    "Password": "karipass",
+    "Telefono": 88778888
+  },
+  {
+    "Id": 29,
+    "Nombre": "Esteban Mora",
+    "Email": "emora@email.com",
+    "Password": "estepass",
+    "Telefono": 88779999
+  },
+  {
+    "Id": 30,
+    "Nombre": "Laura Ramírez",
+    "Email": "lramirez@email.com",
+    "Password": "laurita",
+    "Telefono": 88660000
+  },
+  {
+    "Id": 31,
+    "Nombre": "Andrés Céspedes",
+    "Email": "acespedes@email.com",
+    "Password": "andces",
+    "Telefono": 88661111
+  },
+  {
+    "Id": 32,
+    "Nombre": "Lucía Jiménez",
+    "Email": "ljimenez@email.com",
+    "Password": "lucypass",
+    "Telefono": 88662222
+  },
+  {
+    "Id": 33,
+    "Nombre": "Pedro Solano",
+    "Email": "psolano@email.com",
+    "Password": "petepass",
+    "Telefono": 88663333
+  },
+  {
+    "Id": 34,
+    "Nombre": "María Vargas",
+    "Email": "mvargas2@email.com",
+    "Password": "mariav",
+    "Telefono": 88664444
+  },
+  {
+    "Id": 35,
+    "Nombre": "José Chaves",
+    "Email": "jchaves@email.com",
+    "Password": "josec",
+    "Telefono": 88665555
+  },
+  {
+    "Id": 36,
+    "Nombre": "Valeria Rojas",
+    "Email": "vrojas@email.com",
+    "Password": "valro",
+    "Telefono": 88666666
+  },
+  {
+    "Id": 37,
+    "Nombre": "Diego López",
+    "Email": "dlopez@email.com",
+    "Password": "diegol",
+    "Telefono": 88667777
+  },
+  {
+    "Id": 38,
+    "Nombre": "Isabel Pérez",
+    "Email": "iperez@email.com",
+    "Password": "isaperez",
+    "Telefono": 88668888
+  },
+  {
+    "Id": 39,
+    "Nombre": "Roberto Méndez",
+    "Email": "rmendez@email.com",
+    "Password": "robm",
+    "Telefono": 88669999
+  },
+  {
+    "Id": 40,
+    "Nombre": "Andrea Araya",
+    "Email": "aaraya@email.com",
+    "Password": "andaraya",
+    "Telefono": 88550000
+  },
+  {
+    "Id": 41,
+    "Nombre": "Carlos Jiménez",
+    "Email": "cjimenez@email.com",
+    "Password": "carljim",
+    "Telefono": 88551111
+  },
+  {
+    "Id": 42,
+    "Nombre": "Paola Solano",
+    "Email": "psolano2@email.com",
+    "Password": "paosol",
+    "Telefono": 88552222
+  },
+  {
+    "Id": 43,
+    "Nombre": "David Vargas",
+    "Email": "dvargas@email.com",
+    "Password": "davidv",
+    "Telefono": 88553333
+  },
+  {
+    "Id": 44,
+    "Nombre": "Marcela Chaves",
+    "Email": "mchaves@email.com",
+    "Password": "marche",
+    "Telefono": 88554444
+  },
+  {
+    "Id": 45,
+    "Nombre": "Kevin Rojas",
+    "Email": "krojas@email.com",
+    "Password": "kevro",
+    "Telefono": 88555555
+  },
+  {
+    "Id": 46,
+    "Nombre": "Natalia López",
+    "Email": "nlopez@email.com",
+    "Password": "natlo",
+    "Telefono": 88556666
+  },
+  {
+    "Id": 47,
+    "Nombre": "José Ramírez",
+    "Email": "jramirez@email.com",
+    "Password": "joser",
+    "Telefono": 88557777
+  },
+  {
+    "Id": 48,
+    "Nombre": "Daniela Céspedes",
+    "Email": "dcespedes@email.com",
+    "Password": "danice",
+    "Telefono": 88558888
+  },
+  {
+    "Id": 49,
+    "Nombre": "Andrey Jiménez",
+    "Email": "ajimenez@email.com",
+    "Password": "andjim",
+    "Telefono": 88559999
+  },
+  {
+    "Id": 50,
+    "Nombre": "Melissa Solano",
+    "Email": "msolano@email.com",
+    "Password": "melsol",
+    "Telefono": 88440000
+  }
+]
