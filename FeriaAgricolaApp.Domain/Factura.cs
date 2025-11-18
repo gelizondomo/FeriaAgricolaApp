@@ -98,18 +98,18 @@
 
 
         /// <summary>
-        /// Generar the desde order.
+        /// Generar desde ordencompra.
         /// </summary>
-        /// <param name="order">The order.</param>
+        /// <param name="ordenCompra">The ordencompra.</param>
         /// <param name="nombreCliente">The nombre cliente.</param>
         /// <param name="direccion">The direccion.</param>
-        public void GenerarDesdeOrder(OrdenCompra order, string nombreCliente, string direccion)
+        public void GenerarDesdeOrden(OrdenCompra ordenCompra, string nombreCliente, string direccion)
         {
-            OrdenCompraId = order.Id;
-            UsuarioId = order.UsuarioId;
+            OrdenCompraId = ordenCompra.Id;
+            UsuarioId = ordenCompra.UsuarioId;
             NombreCliente = nombreCliente;
             DireccionEntrega = direccion;
-            Carrito = order.Carrito.Select(i => new CarritoItem
+            Carrito = ordenCompra.Carrito.Select(i => new CarritoItem
             {
                 ProductoId = i.ProductoId,
                 NombreProducto = i.NombreProducto,
