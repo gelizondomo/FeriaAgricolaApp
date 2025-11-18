@@ -23,6 +23,11 @@
         /// Lista de datos cargados.
         /// </returns>
         public List<T> LoadData(string fileName);
+        void SaveData(string path, List<Factura> items);
+        void SaveData(string path, List<OrdenCompra> items);
+        void SaveData(string path, List<Producto> items);
+        void SaveData(string path, List<Proveedor> items);
+        void SaveData(object path, List<Usuario> items);
     }
 
 }
