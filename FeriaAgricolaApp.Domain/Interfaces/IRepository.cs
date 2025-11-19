@@ -37,10 +37,5 @@
         /// <param name="id">Identificador numérico de la entidad a eliminar.</param>
         void Delete(int id);
 
-        /// <summary>
-        /// Guarda los cambios realizados en el repositorio.
-        /// </summary>
-        void SaveChanges();
-
     }
 }

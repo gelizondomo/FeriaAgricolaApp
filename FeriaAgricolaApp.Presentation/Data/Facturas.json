@@ -1,0 +1,1002 @@
+[
+  {
+    "Id": 1,
+    "CodigoFactura": "FAC-0001",
+    "OrdenCompraId": 12,
+    "UsuarioId": 3,
+    "FechaFactura": "2024-11-15",
+    "Total": 14500,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1885
+  },
+  {
+    "Id": 2,
+    "CodigoFactura": "FAC-0002",
+    "OrdenCompraId": 44,
+    "UsuarioId": 7,
+    "FechaFactura": "2024-10-02",
+    "Total": 9600,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 1248
+  },
+  {
+    "Id": 3,
+    "CodigoFactura": "FAC-0003",
+    "OrdenCompraId": 33,
+    "UsuarioId": 12,
+    "FechaFactura": "2024-07-18",
+    "Total": 18750,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 2437.5
+  },
+  {
+    "Id": 4,
+    "CodigoFactura": "FAC-0004",
+    "OrdenCompraId": 6,
+    "UsuarioId": 9,
+    "FechaFactura": "2024-01-23",
+    "Total": 5400,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 702
+  },
+  {
+    "Id": 5,
+    "CodigoFactura": "FAC-0005",
+    "OrdenCompraId": 19,
+    "UsuarioId": 21,
+    "FechaFactura": "2024-09-05",
+    "Total": 12100,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 1573
+  },
+  {
+    "Id": 6,
+    "CodigoFactura": "FAC-0006",
+    "OrdenCompraId": 54,
+    "UsuarioId": 13,
+    "FechaFactura": "2024-03-09",
+    "Total": 7200,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 936
+  },
+  {
+    "Id": 7,
+    "CodigoFactura": "FAC-0007",
+    "OrdenCompraId": 28,
+    "UsuarioId": 17,
+    "FechaFactura": "2023-12-11",
+    "Total": 23500,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 3055
+  },
+  {
+    "Id": 8,
+    "CodigoFactura": "FAC-0008",
+    "OrdenCompraId": 15,
+    "UsuarioId": 8,
+    "FechaFactura": "2024-02-19",
+    "Total": 8300,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1079
+  },
+  {
+    "Id": 9,
+    "CodigoFactura": "FAC-0009",
+    "OrdenCompraId": 72,
+    "UsuarioId": 11,
+    "FechaFactura": "2024-04-28",
+    "Total": 16500,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 2145
+  },
+  {
+    "Id": 10,
+    "CodigoFactura": "FAC-0010",
+    "OrdenCompraId": 39,
+    "UsuarioId": 4,
+    "FechaFactura": "2024-05-03",
+    "Total": 4900,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 637
+  },
+  {
+    "Id": 11,
+    "CodigoFactura": "FAC-0011",
+    "OrdenCompraId": 99,
+    "UsuarioId": 10,
+    "FechaFactura": "2024-06-22",
+    "Total": 13400,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 1742
+  },
+  {
+    "Id": 12,
+    "CodigoFactura": "FAC-0012",
+    "OrdenCompraId": 25,
+    "UsuarioId": 5,
+    "FechaFactura": "2024-07-09",
+    "Total": 19500,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 2535
+  },
+  {
+    "Id": 13,
+    "CodigoFactura": "FAC-0013",
+    "OrdenCompraId": 46,
+    "UsuarioId": 18,
+    "FechaFactura": "2024-08-11",
+    "Total": 6300,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 819
+  },
+  {
+    "Id": 14,
+    "CodigoFactura": "FAC-0014",
+    "OrdenCompraId": 52,
+    "UsuarioId": 14,
+    "FechaFactura": "2024-08-29",
+    "Total": 15300,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 1989
+  },
+  {
+    "Id": 15,
+    "CodigoFactura": "FAC-0015",
+    "OrdenCompraId": 88,
+    "UsuarioId": 2,
+    "FechaFactura": "2024-09-15",
+    "Total": 4700,
+    "DireccionEntrega": "San José",
+    "Impuesto": 611
+  },
+  {
+    "Id": 16,
+    "CodigoFactura": "FAC-0016",
+    "OrdenCompraId": 77,
+    "UsuarioId": 19,
+    "FechaFactura": "2024-10-04",
+    "Total": 8900,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 1157
+  },
+  {
+    "Id": 17,
+    "CodigoFactura": "FAC-0017",
+    "OrdenCompraId": 65,
+    "UsuarioId": 22,
+    "FechaFactura": "2024-10-27",
+    "Total": 15900,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 2067
+  },
+  {
+    "Id": 18,
+    "CodigoFactura": "FAC-0018",
+    "OrdenCompraId": 73,
+    "UsuarioId": 16,
+    "FechaFactura": "2024-11-02",
+    "Total": 7700,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 1001
+  },
+  {
+    "Id": 19,
+    "CodigoFactura": "FAC-0019",
+    "OrdenCompraId": 90,
+    "UsuarioId": 6,
+    "FechaFactura": "2024-12-01",
+    "Total": 12800,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 1664
+  },
+  {
+    "Id": 20,
+    "CodigoFactura": "FAC-0020",
+    "OrdenCompraId": 8,
+    "UsuarioId": 20,
+    "FechaFactura": "2023-09-26",
+    "Total": 18200,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 2366
+  },
+  {
+    "Id": 21,
+    "CodigoFactura": "FAC-0021",
+    "OrdenCompraId": 41,
+    "UsuarioId": 15,
+    "FechaFactura": "2024-03-17",
+    "Total": 9200,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 1196
+  },
+  {
+    "Id": 22,
+    "CodigoFactura": "FAC-0022",
+    "OrdenCompraId": 57,
+    "UsuarioId": 3,
+    "FechaFactura": "2023-11-09",
+    "Total": 14800,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1924
+  },
+  {
+    "Id": 23,
+    "CodigoFactura": "FAC-0023",
+    "OrdenCompraId": 18,
+    "UsuarioId": 9,
+    "FechaFactura": "2024-01-28",
+    "Total": 5100,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 663
+  },
+  {
+    "Id": 24,
+    "CodigoFactura": "FAC-0024",
+    "OrdenCompraId": 70,
+    "UsuarioId": 13,
+    "FechaFactura": "2023-12-23",
+    "Total": 22300,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 2899
+  },
+  {
+    "Id": 25,
+    "CodigoFactura": "FAC-0025",
+    "OrdenCompraId": 52,
+    "UsuarioId": 4,
+    "FechaFactura": "2024-02-14",
+    "Total": 8700,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 1131
+  },
+  {
+    "Id": 26,
+    "CodigoFactura": "FAC-0026",
+    "OrdenCompraId": 26,
+    "UsuarioId": 21,
+    "FechaFactura": "2024-05-19",
+    "Total": 18400,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 2392
+  },
+  {
+    "Id": 27,
+    "CodigoFactura": "FAC-0027",
+    "OrdenCompraId": 5,
+    "UsuarioId": 7,
+    "FechaFactura": "2024-06-27",
+    "Total": 7200,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 936
+  },
+  {
+    "Id": 28,
+    "CodigoFactura": "FAC-0028",
+    "OrdenCompraId": 62,
+    "UsuarioId": 11,
+    "FechaFactura": "2024-07-13",
+    "Total": 14100,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 1833
+  },
+  {
+    "Id": 29,
+    "CodigoFactura": "FAC-0029",
+    "OrdenCompraId": 38,
+    "UsuarioId": 5,
+    "FechaFactura": "2023-10-06",
+    "Total": 5900,
+    "DireccionEntrega": "San José",
+    "Impuesto": 767
+  },
+  {
+    "Id": 30,
+    "CodigoFactura": "FAC-0030",
+    "OrdenCompraId": 87,
+    "UsuarioId": 12,
+    "FechaFactura": "2024-08-22",
+    "Total": 19800,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 2574
+  },
+  {
+    "Id": 31,
+    "CodigoFactura": "FAC-0031",
+    "OrdenCompraId": 17,
+    "UsuarioId": 14,
+    "FechaFactura": "2023-07-11",
+    "Total": 4600,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 598
+  },
+  {
+    "Id": 32,
+    "CodigoFactura": "FAC-0032",
+    "OrdenCompraId": 79,
+    "UsuarioId": 6,
+    "FechaFactura": "2024-06-05",
+    "Total": 11500,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 1495
+  },
+  {
+    "Id": 33,
+    "CodigoFactura": "FAC-0033",
+    "OrdenCompraId": 9,
+    "UsuarioId": 16,
+    "FechaFactura": "2024-02-26",
+    "Total": 7000,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 910
+  },
+  {
+    "Id": 34,
+    "CodigoFactura": "FAC-0034",
+    "OrdenCompraId": 29,
+    "UsuarioId": 18,
+    "FechaFactura": "2024-03-04",
+    "Total": 15200,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 1976
+  },
+  {
+    "Id": 35,
+    "CodigoFactura": "FAC-0035",
+    "OrdenCompraId": 74,
+    "UsuarioId": 2,
+    "FechaFactura": "2023-12-18",
+    "Total": 24000,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 3120
+  },
+  {
+    "Id": 36,
+    "CodigoFactura": "FAC-0036",
+    "OrdenCompraId": 91,
+    "UsuarioId": 10,
+    "FechaFactura": "2024-01-05",
+    "Total": 9800,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1274
+  },
+  {
+    "Id": 37,
+    "CodigoFactura": "FAC-0037",
+    "OrdenCompraId": 50,
+    "UsuarioId": 19,
+    "FechaFactura": "2023-08-27",
+    "Total": 13400,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 1742
+  },
+  {
+    "Id": 38,
+    "CodigoFactura": "FAC-0038",
+    "OrdenCompraId": 95,
+    "UsuarioId": 9,
+    "FechaFactura": "2023-11-29",
+    "Total": 6900,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 897
+  },
+  {
+    "Id": 39,
+    "CodigoFactura": "FAC-0039",
+    "OrdenCompraId": 3,
+    "UsuarioId": 3,
+    "FechaFactura": "2024-04-15",
+    "Total": 17400,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 2262
+  },
+  {
+    "Id": 40,
+    "CodigoFactura": "FAC-0040",
+    "OrdenCompraId": 84,
+    "UsuarioId": 8,
+    "FechaFactura": "2023-10-19",
+    "Total": 5200,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 676
+  },
+  {
+    "Id": 41,
+    "CodigoFactura": "FAC-0041",
+    "OrdenCompraId": 32,
+    "UsuarioId": 11,
+    "FechaFactura": "2024-03-21",
+    "Total": 14700,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 1911
+  },
+  {
+    "Id": 42,
+    "CodigoFactura": "FAC-0042",
+    "OrdenCompraId": 14,
+    "UsuarioId": 7,
+    "FechaFactura": "2024-01-12",
+    "Total": 5600,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 728
+  },
+  {
+    "Id": 43,
+    "CodigoFactura": "FAC-0043",
+    "OrdenCompraId": 67,
+    "UsuarioId": 13,
+    "FechaFactura": "2023-09-14",
+    "Total": 17200,
+    "DireccionEntrega": "San José",
+    "Impuesto": 2236
+  },
+  {
+    "Id": 44,
+    "CodigoFactura": "FAC-0044",
+    "OrdenCompraId": 49,
+    "UsuarioId": 4,
+    "FechaFactura": "2024-05-07",
+    "Total": 11300,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 1469
+  },
+  {
+    "Id": 45,
+    "CodigoFactura": "FAC-0045",
+    "OrdenCompraId": 10,
+    "UsuarioId": 21,
+    "FechaFactura": "2023-11-02",
+    "Total": 7600,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 988
+  },
+  {
+    "Id": 46,
+    "CodigoFactura": "FAC-0046",
+    "OrdenCompraId": 92,
+    "UsuarioId": 19,
+    "FechaFactura": "2024-02-02",
+    "Total": 18300,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 2379
+  },
+  {
+    "Id": 47,
+    "CodigoFactura": "FAC-0047",
+    "OrdenCompraId": 68,
+    "UsuarioId": 6,
+    "FechaFactura": "2023-12-09",
+    "Total": 9100,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 1183
+  },
+  {
+    "Id": 48,
+    "CodigoFactura": "FAC-0048",
+    "OrdenCompraId": 2,
+    "UsuarioId": 16,
+    "FechaFactura": "2024-03-30",
+    "Total": 14400,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 1872
+  },
+  {
+    "Id": 49,
+    "CodigoFactura": "FAC-0049",
+    "OrdenCompraId": 53,
+    "UsuarioId": 14,
+    "FechaFactura": "2024-04-18",
+    "Total": 6400,
+    "DireccionEntrega": "San José",
+    "Impuesto": 832
+  },
+  {
+    "Id": 50,
+    "CodigoFactura": "FAC-0050",
+    "OrdenCompraId": 27,
+    "UsuarioId": 12,
+    "FechaFactura": "2023-07-17",
+    "Total": 21100,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 2743
+  },
+  {
+    "Id": 51,
+    "CodigoFactura": "FAC-0051",
+    "OrdenCompraId": 98,
+    "UsuarioId": 18,
+    "FechaFactura": "2024-02-22",
+    "Total": 5500,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 715
+  },
+  {
+    "Id": 52,
+    "CodigoFactura": "FAC-0052",
+    "OrdenCompraId": 76,
+    "UsuarioId": 8,
+    "FechaFactura": "2024-05-21",
+    "Total": 18600,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 2418
+  },
+  {
+    "Id": 53,
+    "CodigoFactura": "FAC-0053",
+    "OrdenCompraId": 20,
+    "UsuarioId": 3,
+    "FechaFactura": "2023-10-23",
+    "Total": 7300,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 949
+  },
+  {
+    "Id": 54,
+    "CodigoFactura": "FAC-0054",
+    "OrdenCompraId": 43,
+    "UsuarioId": 10,
+    "FechaFactura": "2024-08-01",
+    "Total": 19900,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 2587
+  },
+  {
+    "Id": 55,
+    "CodigoFactura": "FAC-0055",
+    "OrdenCompraId": 35,
+    "UsuarioId": 17,
+    "FechaFactura": "2023-09-28",
+    "Total": 9800,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 1274
+  },
+  {
+    "Id": 56,
+    "CodigoFactura": "FAC-0056",
+    "OrdenCompraId": 24,
+    "UsuarioId": 5,
+    "FechaFactura": "2024-06-14",
+    "Total": 13300,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1729
+  },
+  {
+    "Id": 57,
+    "CodigoFactura": "FAC-0057",
+    "OrdenCompraId": 6,
+    "UsuarioId": 7,
+    "FechaFactura": "2023-12-03",
+    "Total": 6600,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 858
+  },
+  {
+    "Id": 58,
+    "CodigoFactura": "FAC-0058",
+    "OrdenCompraId": 100,
+    "UsuarioId": 22,
+    "FechaFactura": "2024-07-09",
+    "Total": 17800,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 2314
+  },
+  {
+    "Id": 59,
+    "CodigoFactura": "FAC-0059",
+    "OrdenCompraId": 82,
+    "UsuarioId": 9,
+    "FechaFactura": "2024-05-11",
+    "Total": 5200,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 676
+  },
+  {
+    "Id": 60,
+    "CodigoFactura": "FAC-0060",
+    "OrdenCompraId": 30,
+    "UsuarioId": 11,
+    "FechaFactura": "2023-08-19",
+    "Total": 17100,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 2223
+  },
+  {
+    "Id": 61,
+    "CodigoFactura": "FAC-0061",
+    "OrdenCompraId": 47,
+    "UsuarioId": 14,
+    "FechaFactura": "2024-03-14",
+    "Total": 9300,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 1209
+  },
+  {
+    "Id": 62,
+    "CodigoFactura": "FAC-0062",
+    "OrdenCompraId": 59,
+    "UsuarioId": 20,
+    "FechaFactura": "2023-11-27",
+    "Total": 14800,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 1924
+  },
+  {
+    "Id": 63,
+    "CodigoFactura": "FAC-0063",
+    "OrdenCompraId": 31,
+    "UsuarioId": 6,
+    "FechaFactura": "2024-06-12",
+    "Total": 8600,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1118
+  },
+  {
+    "Id": 64,
+    "CodigoFactura": "FAC-0064",
+    "OrdenCompraId": 78,
+    "UsuarioId": 17,
+    "FechaFactura": "2024-08-17",
+    "Total": 20500,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 2665
+  },
+  {
+    "Id": 65,
+    "CodigoFactura": "FAC-0065",
+    "OrdenCompraId": 45,
+    "UsuarioId": 13,
+    "FechaFactura": "2023-10-30",
+    "Total": 7300,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 949
+  },
+  {
+    "Id": 66,
+    "CodigoFactura": "FAC-0066",
+    "OrdenCompraId": 58,
+    "UsuarioId": 8,
+    "FechaFactura": "2024-02-04",
+    "Total": 19200,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 2496
+  },
+  {
+    "Id": 67,
+    "CodigoFactura": "FAC-0067",
+    "OrdenCompraId": 16,
+    "UsuarioId": 5,
+    "FechaFactura": "2023-12-14",
+    "Total": 5400,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 702
+  },
+  {
+    "Id": 68,
+    "CodigoFactura": "FAC-0068",
+    "OrdenCompraId": 64,
+    "UsuarioId": 10,
+    "FechaFactura": "2024-04-10",
+    "Total": 17800,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 2314
+  },
+  {
+    "Id": 69,
+    "CodigoFactura": "FAC-0069",
+    "OrdenCompraId": 11,
+    "UsuarioId": 15,
+    "FechaFactura": "2023-09-03",
+    "Total": 6100,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 793
+  },
+  {
+    "Id": 70,
+    "CodigoFactura": "FAC-0070",
+    "OrdenCompraId": 85,
+    "UsuarioId": 3,
+    "FechaFactura": "2024-07-21",
+    "Total": 16700,
+    "DireccionEntrega": "San José",
+    "Impuesto": 2171
+  },
+  {
+    "Id": 71,
+    "CodigoFactura": "FAC-0071",
+    "OrdenCompraId": 48,
+    "UsuarioId": 18,
+    "FechaFactura": "2023-11-16",
+    "Total": 9200,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 1196
+  },
+  {
+    "Id": 72,
+    "CodigoFactura": "FAC-0072",
+    "OrdenCompraId": 89,
+    "UsuarioId": 12,
+    "FechaFactura": "2024-01-08",
+    "Total": 15400,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 2002
+  },
+  {
+    "Id": 73,
+    "CodigoFactura": "FAC-0073",
+    "OrdenCompraId": 63,
+    "UsuarioId": 9,
+    "FechaFactura": "2024-06-03",
+    "Total": 4800,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 624
+  },
+  {
+    "Id": 74,
+    "CodigoFactura": "FAC-0074",
+    "OrdenCompraId": 97,
+    "UsuarioId": 14,
+    "FechaFactura": "2024-08-12",
+    "Total": 21300,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 2769
+  },
+  {
+    "Id": 75,
+    "CodigoFactura": "FAC-0075",
+    "OrdenCompraId": 22,
+    "UsuarioId": 11,
+    "FechaFactura": "2023-09-20",
+    "Total": 5700,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 741
+  },
+  {
+    "Id": 76,
+    "CodigoFactura": "FAC-0076",
+    "OrdenCompraId": 7,
+    "UsuarioId": 20,
+    "FechaFactura": "2024-02-18",
+    "Total": 19900,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 2587
+  },
+  {
+    "Id": 77,
+    "CodigoFactura": "FAC-0077",
+    "OrdenCompraId": 56,
+    "UsuarioId": 6,
+    "FechaFactura": "2023-10-08",
+    "Total": 7200,
+    "DireccionEntrega": "San José",
+    "Impuesto": 936
+  },
+  {
+    "Id": 78,
+    "CodigoFactura": "FAC-0078",
+    "OrdenCompraId": 34,
+    "UsuarioId": 17,
+    "FechaFactura": "2024-03-26",
+    "Total": 15800,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 2054
+  },
+  {
+    "Id": 79,
+    "CodigoFactura": "FAC-0079",
+    "OrdenCompraId": 66,
+    "UsuarioId": 4,
+    "FechaFactura": "2024-05-28",
+    "Total": 8800,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 1144
+  },
+  {
+    "Id": 80,
+    "CodigoFactura": "FAC-0080",
+    "OrdenCompraId": 40,
+    "UsuarioId": 8,
+    "FechaFactura": "2024-04-01",
+    "Total": 17100,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 2223
+  },
+  {
+    "Id": 81,
+    "CodigoFactura": "FAC-0081",
+    "OrdenCompraId": 71,
+    "UsuarioId": 10,
+    "FechaFactura": "2023-12-21",
+    "Total": 6800,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 884
+  },
+  {
+    "Id": 82,
+    "CodigoFactura": "FAC-0082",
+    "OrdenCompraId": 36,
+    "UsuarioId": 13,
+    "FechaFactura": "2024-05-02",
+    "Total": 15600,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 2028
+  },
+  {
+    "Id": 83,
+    "CodigoFactura": "FAC-0083",
+    "OrdenCompraId": 86,
+    "UsuarioId": 7,
+    "FechaFactura": "2023-10-17",
+    "Total": 13300,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1729
+  },
+  {
+    "Id": 84,
+    "CodigoFactura": "FAC-0084",
+    "OrdenCompraId": 4,
+    "UsuarioId": 21,
+    "FechaFactura": "2024-06-19",
+    "Total": 5500,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 715
+  },
+  {
+    "Id": 85,
+    "CodigoFactura": "FAC-0085",
+    "OrdenCompraId": 13,
+    "UsuarioId": 6,
+    "FechaFactura": "2024-08-04",
+    "Total": 19400,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 2522
+  },
+  {
+    "Id": 86,
+    "CodigoFactura": "FAC-0086",
+    "OrdenCompraId": 1,
+    "UsuarioId": 18,
+    "FechaFactura": "2023-07-09",
+    "Total": 8700,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 1131
+  },
+  {
+    "Id": 87,
+    "CodigoFactura": "FAC-0087",
+    "OrdenCompraId": 23,
+    "UsuarioId": 9,
+    "FechaFactura": "2024-02-24",
+    "Total": 16200,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 2106
+  },
+  {
+    "Id": 88,
+    "CodigoFactura": "FAC-0088",
+    "OrdenCompraId": 55,
+    "UsuarioId": 5,
+    "FechaFactura": "2023-08-04",
+    "Total": 4800,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 624
+  },
+  {
+    "Id": 89,
+    "CodigoFactura": "FAC-0089",
+    "OrdenCompraId": 80,
+    "UsuarioId": 12,
+    "FechaFactura": "2024-07-26",
+    "Total": 17800,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 2314
+  },
+  {
+    "Id": 90,
+    "CodigoFactura": "FAC-0090",
+    "OrdenCompraId": 42,
+    "UsuarioId": 3,
+    "FechaFactura": "2024-06-08",
+    "Total": 5600,
+    "DireccionEntrega": "San José",
+    "Impuesto": 728
+  },
+  {
+    "Id": 91,
+    "CodigoFactura": "FAC-0091",
+    "OrdenCompraId": 60,
+    "UsuarioId": 17,
+    "FechaFactura": "2023-09-12",
+    "Total": 7200,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 936
+  },
+  {
+    "Id": 92,
+    "CodigoFactura": "FAC-0092",
+    "OrdenCompraId": 93,
+    "UsuarioId": 10,
+    "FechaFactura": "2023-12-01",
+    "Total": 24500,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 3185
+  },
+  {
+    "Id": 93,
+    "CodigoFactura": "FAC-0093",
+    "OrdenCompraId": 51,
+    "UsuarioId": 8,
+    "FechaFactura": "2024-03-01",
+    "Total": 10200,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 1326
+  },
+  {
+    "Id": 94,
+    "CodigoFactura": "FAC-0094",
+    "OrdenCompraId": 75,
+    "UsuarioId": 16,
+    "FechaFactura": "2024-08-10",
+    "Total": 21400,
+    "DireccionEntrega": "Limón",
+    "Impuesto": 2782
+  },
+  {
+    "Id": 95,
+    "CodigoFactura": "FAC-0095",
+    "OrdenCompraId": 61,
+    "UsuarioId": 14,
+    "FechaFactura": "2023-10-13",
+    "Total": 5900,
+    "DireccionEntrega": "Puntarenas",
+    "Impuesto": 767
+  },
+  {
+    "Id": 96,
+    "CodigoFactura": "FAC-0096",
+    "OrdenCompraId": 96,
+    "UsuarioId": 22,
+    "FechaFactura": "2024-07-02",
+    "Total": 19000,
+    "DireccionEntrega": "Guanacaste",
+    "Impuesto": 2470
+  },
+  {
+    "Id": 97,
+    "CodigoFactura": "FAC-0097",
+    "OrdenCompraId": 94,
+    "UsuarioId": 20,
+    "FechaFactura": "2023-08-25",
+    "Total": 11200,
+    "DireccionEntrega": "San José",
+    "Impuesto": 1456
+  },
+  {
+    "Id": 98,
+    "CodigoFactura": "FAC-0098",
+    "OrdenCompraId": 69,
+    "UsuarioId": 4,
+    "FechaFactura": "2024-06-25",
+    "Total": 8400,
+    "DireccionEntrega": "Heredia",
+    "Impuesto": 1092
+  },
+  {
+    "Id": 99,
+    "CodigoFactura": "FAC-0099",
+    "OrdenCompraId": 81,
+    "UsuarioId": 2,
+    "FechaFactura": "2023-09-07",
+    "Total": 5900,
+    "DireccionEntrega": "Cartago",
+    "Impuesto": 767
+  },
+  {
+    "Id": 100,
+    "CodigoFactura": "FAC-0100",
+    "OrdenCompraId": 83,
+    "UsuarioId": 11,
+    "FechaFactura": "2024-05-15",
+    "Total": 18200,
+    "DireccionEntrega": "Alajuela",
+    "Impuesto": 2366
+  }
+]

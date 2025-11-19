@@ -1,28 +1,44 @@
-﻿using FeriaAgricolaApp.Domain;
+﻿using FeriaAgricolaApp.Application.Utils;
+using FeriaAgricolaApp.Domain;
 using FeriaAgricolaApp.Domain.Interfaces;
-using FeriaBox.Application.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeriaBox.Application.Services
+namespace FeriaAgricolaApp.Application
 {
     /// <summary>
     /// Servicio encargado de gestionar operaciones relacionadas con usuarios.
     /// </summary>
     public class UsuarioService
     {
-        private readonly IRepository<Usuario> UsuarioRepo;
+        private readonly IRepository<Usuario> usuarioRepo;
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="UsuarioService"/>.
         /// </summary>
-        /// <param name="UsuarioRepo">Repositorio de usuarios.</param>
-        public UsuarioService(IRepository<Usuario> UsuarioRepo)
+        /// <param name="usuarioRepo">Repositorio de usuarios.</param>
+        public UsuarioService(IRepository<Usuario> usuarioRepo)
         {
-            this.UsuarioRepo = UsuarioRepo;
+            this.usuarioRepo = usuarioRepo;
+        }
+
+        /// <summary>
+        /// Verifica las credenciales de acceso del usuario.
+        /// </summary>
+        /// <param name="email">Correo electrónico del usuario.</param>
+        /// <param name="password">Contraseña del usuario.</param>
+        /// <returns>
+        /// El usuario correspondiente si las credenciales son válidas; de lo contrario, <c>null</c>.
+        /// </returns>
+        public Usuario? Login(string email, string password)
+        {
+            return usuarioRepo.GetAll()
+            .FirstOrDefault(u =>
+                u.Email.Equals(email, StringComparison.OrdinalIgnoreCase)
+                && u.Password == password);
         }
 
         /// <summary>
@@ -38,39 +54,37 @@ namespace FeriaBox.Application.Services
         public bool RegistrarUsuario(string nombre, string email, string password, string telefono)
         {
             if (!ValidationUtils.EmailValido(email)) return false;
-            if (UsuarioRepo.GetAll().Any(u => u.Email == email)) return false;
+            if (usuarioRepo.GetAll().Any(u => u.Email == email)) return false;
+
+            int nuevoId = usuarioRepo.GetAll().Count > 0
+                ? usuarioRepo.GetAll().Max(u => u.Id) + 1
+                : 1;
 
             var nuevo = new Usuario
             {
-                Id = 0, // O asigna el valor adecuado si corresponde
+                Id = nuevoId,
                 Nombre = nombre,
                 Email = email,
                 Password = password,
                 Telefono = telefono,
-                Direcciones = new List<Direccion>() // Inicializa la lista si es necesario
+                
             };
-            UsuarioRepo.Add(nuevo);
+            usuarioRepo.Add(nuevo);
             return true;
-        }
-
-        /// <summary>
-        /// Verifica las credenciales de acceso del usuario.
-        /// </summary>
-        /// <param name="email">Correo electrónico del usuario.</param>
-        /// <param name="password">Contraseña del usuario.</param>
-        /// <returns>
-        /// El usuario correspondiente si las credenciales son válidas; de lo contrario, <c>null</c>.
-        /// </returns>
-        public Usuario? Login(string email, string password)
-        {
-            return UsuarioRepo.GetAll().FirstOrDefault(u => u.Email == email && u.Password == password);
         }
 
         /// <summary>
         /// Obtiene todos los usuarios registrados en el sistema.
         /// </summary>
         /// <returns>Lista de usuarios.</returns>
-        public List<Usuario> ObtenerTodos() => UsuarioRepo.GetAll();
+        public List<Usuario> ObtenerTodos() => usuarioRepo.GetAll();
+
+        /// <summary>
+        /// Obteners por id.
+        /// </summary>
+        /// <param name="id">El id de usuario.</param>
+        /// <returns></returns>
+        public Usuario? ObtenerPorId(int id) => usuarioRepo.GetById(id);
     }
 }
 

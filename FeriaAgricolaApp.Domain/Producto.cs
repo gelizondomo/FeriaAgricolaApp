@@ -1,26 +1,9 @@
-﻿namespace FeriaAgricolaApp.Domain
+﻿using FeriaAgricolaApp.Domain.Enums;
+
+namespace FeriaAgricolaApp.Domain
 {
     public class Producto
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id">El id del producto</param>
-        /// <param name="nombre">El nombre del producto</param>
-        /// <param name="precio">El precio del producto</param>
-        /// <param name="unidadMedida">La unidadMedida del producto</param>
-        /// <param name="stock">El stock del producto</param>
-        /// <param name="proveedorId">El id del proveedor</param>
-        public Producto(int id, string nombre, decimal precio, string unidadMedida, int stock, int proveedorId)
-        {
-            Id = id;
-            Nombre = nombre;
-            Precio = precio;
-            UnidadMedida = unidadMedida;
-            Stock = stock;
-            ProveedorId = proveedorId;
-        }
-
         /// <summary>
         /// Gets y sets el id del producto.
         /// </summary>
@@ -45,13 +28,14 @@
         /// </value>
         public decimal Precio { get; set; }
 
+
         /// <summary>
-        /// Gets y sets la unidadMedida del producto.
+        /// Gets y sets de unidad medida.
         /// </summary>
         /// <value>
-        /// La unidadMedida del producto.
+        /// The unidad medida.
         /// </value>
-        public string UnidadMedida { get; set; } = string.Empty;
+        public UnidadMedida UnidadMedida { get; set; }
 
         /// <summary>
         /// Gets y sets el stock del producto.
@@ -69,16 +53,14 @@
         /// </value>
         public int ProveedorId { get; set; } = 0;
 
+
         /// <summary>
-        /// Convierte a String
+        /// Gets or sets del feria id.
         /// </summary>
-        /// <returns>
-        /// A <see cref="string" /> que representa esta instancia.
-        /// </returns>
-        public override string ToString()
-        {
-            return $"{Id},{Nombre},{Precio},{UnidadMedida},{Stock},{ProveedorId}{Environment.NewLine}";
-        }
+        /// <value>
+        /// The feria id.
+        /// </value>
+        public int FeriaId { get; set; }
 
     }
 }

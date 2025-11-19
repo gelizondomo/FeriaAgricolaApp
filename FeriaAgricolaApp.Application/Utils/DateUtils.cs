@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeriaBox.Application.Helpers
+namespace FeriaAgricolaApp.Application.Utils
 {
     public static class DateUtils
     {

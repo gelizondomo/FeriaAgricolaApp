@@ -1,45 +1,39 @@
 ﻿using FeriaAgricolaApp.Domain;
 using FeriaAgricolaApp.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FeriaAgricolaApp.Infrastructure.Repositorios
 {
-    public class UsuarioRepository : IRepository<Usuario>
+    public class FeriaRepository : IRepository<Feria>
     {
         private readonly string path;
-        private readonly IDataHandler<Usuario> dataHandler;
-        private readonly List<Usuario> items;
+        private readonly IDataHandler<Feria> dataHandler;
+        private readonly List<Feria> items;
+
 
         /// <summary>
-        /// Inicializa una nueva instancia de la clase  <see cref="UsuarioRepository"/>.
+        /// Inicializa una nueva instancia de la clase  <see cref="FeriaRepository"/>.
         /// </summary>
         /// <param name="path">The path.</param>
         /// <param name="dataHandler">The data handler.</param>
-        public UsuarioRepository(string path, IDataHandler<Usuario> dataHandler)
+        public FeriaRepository(string path, IDataHandler<Feria> dataHandler)
         {
             this.path = path;
             this.dataHandler = dataHandler;
-            this.items = dataHandler.LoadData(this.path);
+            this.items = this.dataHandler.LoadData(this.path);
         }
 
         /// <summary>
         /// Obtiene todo por GetAll.
         /// </summary>
         /// <returns></returns>
-        public List<Usuario> GetAll() => items;
+        public List<Feria> GetAll() => items;
 
         /// <summary>
         /// Obtiene el get por id.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Usuario? GetById(int id)
+        public Feria? GetById(int id)
         {
             return items.FirstOrDefault(x => x.Id == id);
         }
@@ -48,24 +42,23 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
         /// Agrega la entidad especifica.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        public void Add(Usuario entity)
+        public void Add(Feria entity)
         {
             items.Add(entity);
             SaveChanges();
         }
 
         /// <summary>
-        /// Actualiza la entidad especifica.
+        /// Actualiza la entidad especifica
         /// </summary>
         /// <param name="entity">The entity.</param>
-        public void Update(Usuario entity)
+        public void Update(Feria entity)
         {
             var idx = items.FindIndex(x => x.Id == entity.Id);
             if (idx >= 0)
-            {
-                this.items[idx] = entity;
-                SaveChanges();
-            }
+                items[idx] = entity;
+
+            SaveChanges();
         }
 
         /// <summary>
@@ -74,16 +67,18 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
         /// <param name="id">The identifier.</param>
         public void Delete(int id)
         {
-            this.items.RemoveAll(x => x.Id == id);
+            items.RemoveAll(x => x.Id == id);
             SaveChanges();
         }
 
         /// <summary>
         /// Guarda los cambios.
         /// </summary>
-        private void SaveChanges()
+        public void SaveChanges()
         {
             dataHandler.SaveData(path, items);
         }
     }
+
+
 }

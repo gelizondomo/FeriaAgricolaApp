@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeriaBox.Application.Services
+namespace FeriaAgricolaApp.Application
 {
     /// <summary>
     /// Servicio encargado de gestionar operaciones relacionadas con facturas.
@@ -32,14 +32,17 @@ namespace FeriaBox.Application.Services
         /// <param name="nombreCliente">Nombre del cliente.</param>
         /// <param name="direccionEntrega">Dirección de entrega.</param>
         /// <returns>La factura generada.</returns>
-        public Factura GenerarFactura(OrdenCompra orden, string nombreCliente, string direccionEntrega)
+        public Factura GenerarFactura(OrdenCompra orden, int usuariId, string direccionEntrega)
         {
             var factura = new Factura
             {
-                CodigoFactura = $"FAC-{DateTime.Now:yyyy}-{Random.Shared.Next(100000, 999999)}",
+                OrdenCompraId = orden.Id,
+                UsuarioId = usuariId,
+                Total = orden.Total,
+                DireccionEntrega = direccionEntrega,
+                CodigoFactura = $"FAC-{DateTime.Now:HHmmssddMMyyyy}"
             };
             
-            factura.GenerarDesdeOrden(orden, nombreCliente, direccionEntrega);
             facturaRepo.Add(factura);
             return factura;
         }
@@ -80,7 +83,7 @@ namespace FeriaBox.Application.Services
         /// <param name="fin">Fecha de fin del rango.</param>
         /// <returns>Lista de facturas dentro del rango de fechas.</returns>
         public List<Factura> FiltrarPorFechas(DateTime inicio, DateTime fin) =>
-            facturaRepo.GetAll().Where(f => f.FechaEmision >= inicio && f.FechaEmision <= fin).ToList();
+            facturaRepo.GetAll().Where(f => f.FechaFactura >= inicio && f.FechaFactura <= fin).ToList();
 
         /// <summary>
         /// Calcula el total facturado dentro de un rango de fechas.

@@ -1,5 +1,5 @@
-﻿using FeriaAgricolaApp.Domain;
-using FeriaBox.Application.Services;
+﻿using FeriaAgricolaApp.Application;
+using FeriaAgricolaApp.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
