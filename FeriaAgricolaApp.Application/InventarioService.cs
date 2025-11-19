@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeriaBox.Application.Services
+namespace FeriaAgricolaApp.Application
 {
     /// <summary>
     /// Servicio encargado de gestionar el inventario de productos.
@@ -43,19 +43,5 @@ namespace FeriaBox.Application.Services
             return true;
         }
 
-        /// <summary>
-        /// Repone el inventario de un producto específico.
-        /// </summary>
-        /// <param name="productoId">Identificador del producto.</param>
-        /// <param name="cantidad">Cantidad a reponer.</param>
-        public void ReponerInventario(int productoId, int cantidad)
-        {
-            var producto = productoRepo.GetById(productoId);
-            if (producto != null)
-            {
-                producto.Stock += cantidad;
-                productoRepo.Update(producto);
-            }
-        }
     }
 }

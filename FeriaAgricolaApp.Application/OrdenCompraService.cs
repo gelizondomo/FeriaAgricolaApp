@@ -1,155 +1,153 @@
 ﻿using FeriaAgricolaApp.Domain;
+using FeriaAgricolaApp.Domain.Enums;
 using FeriaAgricolaApp.Domain.Interfaces;
-using FeriaAgricolaApp.Infrastructure.Repositorios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FeriaBox.Application.Services
+namespace FeriaAgricolaApp.Application
 {
     /// <summary>
     /// Servicio encargado de procesar y gestionar órdenes de compra.
     /// </summary>
     public class OrdenCompraService
     {
-        private readonly OrdenCompraRepository ordenRepo;
-        private readonly InventarioService InventarioService;
-        private readonly ProductoService ProductoService;
-        private readonly FacturaService FacturaService;
-        private readonly UsuarioService UsuarioService;
+        private readonly IRepository<OrdenCompra> ordenRepo;
+        private readonly ProductoService productoService;
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="OrdenCompraService"/>.
         /// </summary>
-        /// <param name="OrdenCompraRepository">Repositorio de órdenes.</param>
-        /// <param name="InventarioService">Servicio de inventario.</param>
+        /// <param name="IRepository<OrdenCompra>">Repositorio de órdenes.</param>
         /// <param name="ProductoService">Servicio de productos.</param>
-        /// <param name="FacturaService">Servicio de facturación.</param>
-        /// <param name="UsuarioService">Servicio de usuarios.</param>
         public OrdenCompraService(
-            OrdenCompraRepository ordenRepo,
-            InventarioService InventarioService,
-            ProductoService ProductoService,
-            FacturaService FacturaService,
-            UsuarioService UsuarioService)
+            IRepository<OrdenCompra> ordenRepo,
+            ProductoService ProductoService)
         {
             this.ordenRepo = ordenRepo;
-            this.InventarioService = InventarioService;
-            this.ProductoService = ProductoService;
-            this.FacturaService = FacturaService;
-            this.UsuarioService = UsuarioService;
+            this.productoService = productoService;
         }
 
         /// <summary>
-        /// Crea o recupera el carrito de compras pendiente para un usuario.
+        /// Obtiene o Crea la orden pendiente.
         /// </summary>
-        /// <param name="usuarioId">El identificador del usuario.</param>
-        /// <returns>Una instancia de <see cref="OrdenCompra"/> correspondiente al carrito actual del usuario.</returns>
-
-        public OrdenCompra CrearCarrito(int usuarioId)
+        /// <param name="usuarioId">El usuario id.</param>
+        /// <returns></returns>
+        public OrdenCompra ObtenerOCrearCarrito(int usuarioId)
         {
-            var pendiente = ordenRepo.ObtenerEstadoOrden(usuarioId);
-            if (pendiente != null)
-                return pendiente;
+            // Buscar carrito pendiente
+            var existente = ordenRepo.GetAll()
+                .FirstOrDefault(o => o.UsuarioId == usuarioId && o.EstadoCompra == Estado.Pendiente);
 
-            return ordenRepo.CrearEstadoOrden(usuarioId);
-        }
+            if (existente != null)
+                return existente;
 
-        /// <summary>
-        /// Agrega un producto al carrito de compras del usuario. Si el producto ya existe, incrementa su cantidad.
-        /// </summary>
-        /// <param name="usuarioId">El identificador del usuario.</param>
-        /// <param name="productoId">El identificador del producto a agregar.</param>
-        /// <param name="cantidad">La cantidad del producto a agregar.</param>
-
-        public void AgregarCarrito(int usuarioId, int productoId, int cantidad)
-        {
-            var carrito = CrearCarrito(usuarioId);
-
-            var item = carrito.Items.FirstOrDefault(i => i.ProductId == productoId);
-            if (item != null)
-                item.Cantidad += cantidad;
-            else
-                carrito.Items.Add(new CarritoItem { ProductoId = productoId, Cantidad = cantidad });
-
-            ordenRepo.Update(carrito);
-        }
-
-        /// <summary>
-        /// Elimina un producto específico del carrito de compras del usuario.
-        /// </summary>
-        /// <param name="usuarioId">El identificador del usuario.</param>
-        /// <param name="productoId">El identificador del producto a eliminar.</param>
-
-        public void EliminarCarrito(int usuarioId, int productoId)
-        {
-            var carrito = CrearCarrito(usuarioId);
-            carrito.Items.RemoveAll(i => i.ProductoId == productoId);
-            ordenRepo.Update(carrito);
-        }
-
-        /// <summary>
-        /// Obtiene el nombre del producto según su identificador.
-        /// </summary>
-        /// <param name="productoId">El identificador del producto.</param>
-        /// <returns>El nombre del producto si existe; de lo contrario, "Desconocido".</returns>
-
-        public string ObtenerNombreProducto(int productoId)
-        {
-            var p = ProductoService.ObtenerPorId(productoId);
-            return p?.Nombre ?? "Desconocido";
-        }
-
-        /// <summary>
-        /// Procesa un pedido, actualiza el inventario, registra la orden y genera la factura.
-        /// </summary>
-        /// <param name="pedido">La orden a procesar.</param>
-        /// <param name="direccionEntrega">Dirección de entrega del pedido.</param>
-        /// <returns>
-        /// Una tupla que indica si el proceso fue exitoso y, en caso afirmativo, la factura generada.
-        /// </returns>
-        public (bool Exito, Factura? Factura) ProcesarPedido(OrdenCompra pedido, string direccionEntrega)
-        {
-            decimal total = 0;
-
-            foreach (var item in pedido.Items)
+            // No existe → crear uno nuevo
+            var nuevo = new OrdenCompra
             {
-                var producto = ProductoService.ObtenerPorId(item.ProductoId);
-                if (producto == null || producto.Stock < item.Cantidad)
-                    return (false, null);
+                UsuarioId = usuarioId,
+                FechaCompra = DateTime.Now,
+                EstadoCompra = Estado.Pendiente,
+                Items = new List<CarritoItem>()
+            };
 
-                total += producto.Precio * item.Cantidad;
-                InventarioService.ActualizarInventario(item.ProductoId, item.Cantidad);
+            ordenRepo.Add(nuevo);
+            return nuevo;
+        }
+
+        /// <summary>
+        /// Guarda los cambios.
+        /// </summary>
+        /// <param name="orden">La orden.</param>
+        /// <returns></returns>
+        public void GuardarCambios(OrdenCompra orden)
+        {
+            ordenRepo.Update(orden);
+        }
+
+
+        /// <summary>
+        /// Finalizar la orden.
+        /// </summary>
+        /// <param name="usuarioId">El usuario id.</param>
+        /// <param name="direccionEntrega">La direccion entrega.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception">
+        /// El carrito está vacío.
+        /// o
+        /// Producto no encontrado.
+        /// o
+        /// Stock insuficiente para {prod.Nombre}
+        /// </exception>
+        public OrdenCompra FinalizarOrden(int usuarioId, string direccionEntrega)
+        {
+            var orden = ObtenerOCrearCarrito(usuarioId);
+
+            if (orden.Items.Count == 0)
+                throw new Exception("El carrito está vacío.");
+
+            // Validación de inventario
+            foreach (var item in orden.Items)
+            {
+                var prod = productoService.GetById(item.ProductoId);
+                if (prod == null)
+                    throw new Exception("Producto no encontrado.");
+
+                if (prod.Stock < item.Cantidad)
+                    throw new Exception($"Stock insuficiente para {prod.Nombre}");
             }
 
-            pedido.Total = total;
-            ordenRepo.Add(pedido);
+            // Descontar inventario
+            foreach (var item in orden.Items)
+            {
+                productoService.DescontarStock(item.ProductoId, item.Cantidad);
+            }
 
-            var usuario = UsuarioService.ObtenerTodos().FirstOrDefault(u => u.Id == pedido.UsuarioId);
-            if (usuario == null)
-                return (true, null);
+            orden.EstadoCompra = Estado.Completado;
+            orden.FechaCompra = DateTime.Now;
+            orden.DireccionEntrega = direccionEntrega;
 
-            var factura = FacturaService.GenerarFactura(pedido, usuario.Nombre, direccionEntrega);
-            return (true, factura);
+            ordenRepo.Update(orden);
+            return orden;
         }
 
+
         /// <summary>
-        /// Obtiene todas las órdenes realizadas por un usuario específico.
+        /// Obtener el historial.
         /// </summary>
-        /// <param name="usuarioId">Identificador del usuario.</param>
-        /// <returns>Lista de órdenes del usuario.</returns>
-        public List<OrdenCompra> ObtenerPedidosUsuario(int usuarioId)
+        /// <param name="usuarioId">The usuario id.</param>
+        /// <returns></returns>
+        public List<OrdenCompra> ObtenerHistorial(int usuarioId)
         {
-            return ordenRepo.GetAll().Where(o => o.UsuarioId == usuarioId).ToList();
+            return ordenRepo
+                .GetAll()
+                .Where(o => o.UsuarioId == usuarioId &&
+                            o.EstadoCompra == Estado.Completado)
+                .ToList();
         }
 
         /// <summary>
-        /// Obtiene todas las órdenes registradas en el sistema.
+        /// Obtener el nombre producto.
         /// </summary>
-        /// <returns>Lista de todas las órdenes.</returns>
-        public List<OrdenCompra> ObtenerTodosPedidos() => ordenRepo.GetAll();
+        /// <param name="productoId">El producto id.</param>
+        /// <returns></returns>
+        public string ObtenerNombreProducto(int productoId)
+        {
+            var producto = productoService.GetById(productoId);
+
+            if (producto == null)
+                return "Producto no encontrado";
+
+            return producto.Nombre;
+        }
+
+        /// <summary>
+        /// Vaciar el carrito.
+        /// </summary>
+        /// <param name="usuarioId">The usuario id.</param>
+        public void VaciarCarrito(int usuarioId)
+        {
+            var carrito = ObtenerOCrearCarrito(usuarioId);
+            carrito.Items.Clear();
+            ordenRepo.Update(carrito);
+        }
 
 
     }

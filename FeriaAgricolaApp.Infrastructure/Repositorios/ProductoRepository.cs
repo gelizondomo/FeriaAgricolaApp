@@ -12,7 +12,7 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
     {
         private readonly string path;
         private readonly IDataHandler<Producto> dataHandler;
-        private List<Producto> items;
+        private readonly List<Producto> items;
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="ProductoRepository"/>.

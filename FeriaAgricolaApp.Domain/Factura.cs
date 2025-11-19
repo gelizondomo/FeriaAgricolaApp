@@ -17,67 +17,48 @@
 
 
         /// <summary>
-        /// Gets or sets the orden compra id.
+        /// Gets or sets el orden compra id.
         /// </summary>
         /// <value>
-        /// The orden compra id.
+        /// EL orden compra id.
         /// </value>
         public int OrdenCompraId { get; set; }
 
 
         /// <summary>
-        /// Gets or sets the usuario id.
+        /// Gets or sets el usuario id.
         /// </summary>
         /// <value>
-        /// The usuario id.
+        /// El usuario id.
         /// </value>
         public int UsuarioId { get; set; }
 
 
         /// <summary>
-        /// Gets or sets the fecha emision.
+        /// Gets or sets la fecha factura.
         /// </summary>
         /// <value>
-        /// The fecha emision.
+        /// La fecha factura.
         /// </value>
-        public DateTime FechaEmision { get; set; } = DateTime.Now;
+        public DateTime FechaFactura { get; set; } = DateTime.Now;
 
 
         /// <summary>
-        /// Gets or sets the nombre cliente.
+        /// Gets or sets el total.
         /// </summary>
         /// <value>
-        /// The nombre cliente.
+        /// El total.
         /// </value>
-        public string NombreCliente { get; set; } = string.Empty;
+        public decimal Total { get; set; }
 
 
         /// <summary>
-        /// Gets or sets the direccion entrega.
+        /// Gets or sets la direccion entrega.
         /// </summary>
         /// <value>
-        /// The direccion entrega.
+        /// La direccion entrega.
         /// </value>
         public string DireccionEntrega { get; set; } = string.Empty;
-
-
-        /// <summary>
-        /// Gets or sets the carrito.
-        /// </summary>
-        /// <value>
-        /// The carrito.
-        /// </value>
-        public List<CarritoItem> Carrito { get; set; } = [];
-
-
-        /// <summary>
-        /// Gets or sets the subtotal.
-        /// </summary>
-        /// <value>
-        /// The subtotal.
-        /// </value>
-        public decimal Subtotal { get; set; }
-
 
         /// <summary>
         /// Gets or sets the impuesto.
@@ -87,62 +68,14 @@
         /// </value>
         public decimal Impuesto { get; set; }
 
-
         /// <summary>
-        /// Gets or sets the total.
+        /// Gets or sets the subtotal.
         /// </summary>
         /// <value>
-        /// The total.
+        /// The subtotal.
         /// </value>
-        public decimal Total { get; set; }
+        public decimal Subtotal => Total - Impuesto;  
 
-
-        /// <summary>
-        /// Generar desde ordencompra.
-        /// </summary>
-        /// <param name="ordenCompra">The ordencompra.</param>
-        /// <param name="nombreCliente">The nombre cliente.</param>
-        /// <param name="direccion">The direccion.</param>
-        public void GenerarDesdeOrden(OrdenCompra ordenCompra, string nombreCliente, string direccion)
-        {
-            OrdenCompraId = ordenCompra.Id;
-            UsuarioId = ordenCompra.UsuarioId;
-            NombreCliente = nombreCliente;
-            DireccionEntrega = direccion;
-            Carrito = ordenCompra.Carrito.Select(i => new CarritoItem
-            {
-                ProductoId = i.ProductoId,
-                NombreProducto = i.NombreProducto,
-                Cantidad = i.Cantidad,
-                PrecioUnitario = i.PrecioUnitario
-            }).ToList();
-
-            CalcularTotales();
-        }
-
-
-        /// <summary>
-        /// Calculo de los totales.
-        /// </summary>
-        public void CalcularTotales()
-        {
-            Subtotal = Carrito.Sum(i => i.Subtotal);
-            Impuesto = Math.Round(Subtotal * 0.13m, 2);
-            Total = Subtotal + Impuesto;
-        }
-
-
-        /// <summary>
-        /// Converts to string.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="System.String" /> 
-        /// que representa la instancia
-        /// </returns>
-        public override string ToString()
-        {
-            return $"Factura {CodigoFactura} - {FechaEmision:dd/MM/yyyy} - Total {Total:C}";
-        }
     }
 }
 

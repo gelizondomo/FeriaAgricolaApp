@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeriaBox.Application.Services
+namespace FeriaAgricolaApp.Application
 {
     /// <summary>
     /// Servicio encargado de generar reportes relacionados con órdenes y productos.
@@ -47,27 +47,31 @@ namespace FeriaBox.Application.Services
         /// Un diccionario con los nombres de los productos como clave y la cantidad vendida como valor.
         /// Solo se incluyen los 10 productos más vendidos.
         /// </returns>
+
         public Dictionary<string, int> ProductosMasVendidos()
         {
+            var productos = ProductoRepo.GetAll().ToDictionary(p => p.Id, p => p.Nombre);
+
             var conteo = new Dictionary<string, int>();
 
-            foreach (var pedido in OrdenRepo.GetAll())
+            foreach (var order in OrdenRepo.GetAll().Where(o => o.EstadoCompra== FeriaAgricolaApp.Domain.Enums.Estado.Completado))
             {
-                foreach (var item in pedido.Items)
+                foreach (var item in order.Items)
                 {
-                    var producto = ProductoRepo.GetById(item.ProductoId);
-                    if (producto == null) continue;
-                    if (!conteo.ContainsKey(producto.Nombre)) conteo[producto.Nombre] = 0;
-                    conteo[producto.Nombre] += item.Cantidad;
+                    var nombre = productos.ContainsKey(item.ProductoId) ? productos[item.ProductoId] : "Desconocido";
+                    if (!conteo.ContainsKey(nombre))
+                        conteo[nombre] = 0;
+                    conteo[nombre] += item.Cantidad;
                 }
             }
 
             return conteo
-                .OrderByDescending(c => c.Value)
+                .OrderByDescending(x => x.Value)
                 .Take(10)
-                .ToDictionary(c => c.Key, c => c.Value);
+                .ToDictionary(x => x.Key, x => x.Value);
         }
 
+        
         /// <summary>
         /// Filtra las órdenes realizadas dentro de un rango de fechas.
         /// </summary>

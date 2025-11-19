@@ -6,28 +6,18 @@
     public interface IDataHandler<T>
     {
         /// <summary>
-        /// Guarda los datos.
+        /// Carga el path especifico.
         /// </summary>
-        /// <param name="data">Los datos a guardar.</param>
-        /// <param name="fileName">Nombre del archivo.</param>
-        /// <returns>
-        /// true si los datos se guardan correctamente; de lo contrario, false.
-        /// </returns>
-        public bool SaveData(List<T> data, string fileName);
-
+        /// <param name="path">El path.</param>
+        /// <returns></returns>
+        List<T> LoadData(string path);
         /// <summary>
-        /// Carga los datos.
+        /// Guarda el path especifico.
         /// </summary>
-        /// <param name="fileName">Nombre del archivo.</param>
-        /// <returns>
-        /// Lista de datos cargados.
-        /// </returns>
-        public List<T> LoadData(string fileName);
-        void SaveData(string path, List<Factura> items);
-        void SaveData(string path, List<OrdenCompra> items);
-        void SaveData(string path, List<Producto> items);
-        void SaveData(string path, List<Proveedor> items);
-        void SaveData(object path, List<Usuario> items);
+        /// <param name="path">El path.</param>
+        /// <param name="data">La data.</param>
+        void SaveData(string path, List<T> data);
+
     }
 
 }

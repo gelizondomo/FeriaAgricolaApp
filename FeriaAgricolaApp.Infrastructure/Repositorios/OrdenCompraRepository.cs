@@ -13,7 +13,7 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
     {
         private readonly string path;
         private readonly IDataHandler<OrdenCompra> dataHandler;
-        private List<OrdenCompra> items;
+        private readonly List<OrdenCompra> items;
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="OrdenCompraRepository"/>.
@@ -23,7 +23,7 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
         public OrdenCompraRepository(string path, IDataHandler<OrdenCompra> dataHandler)
         {
             this.path = path;
-            this.dataHandler = this.dataHandler;
+            this.dataHandler = dataHandler;
             items = this.dataHandler.LoadData(this.path);
         }
 
@@ -70,7 +70,7 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
         /// <summary>
         /// Elimina la entidad especifica.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="id">El Id.</param>
         public void Delete(int id)
         {
             items.RemoveAll(x => x.Id == id);
@@ -86,18 +86,31 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
 
         }
 
+
+        /// <summary>
+        /// Obtener el estado orden.
+        /// </summary>
+        /// <param name="usuarioId">El usuario id.</param>
+        /// <returns></returns>
         public OrdenCompra? ObtenerEstadoOrden (int usuarioId)
         {
             return items.FirstOrDefault(o => o.UsuarioId == usuarioId && o.EstadoCompra == Estado.Pendiente);
         }
 
+
+        /// <summary>
+        /// Crear estado orden.
+        /// </summary>
+        /// <param name="usuarioId">El usuario id.</param>
+        /// <returns></returns>
         public OrdenCompra CrearEstadoOrden(int usuarioId)
         {
             var orden = new OrdenCompra
             {
                 UsuarioId = usuarioId,
                 EstadoCompra = Estado.Pendiente,
-                FechaCompra = DateTime.Now
+                FechaCompra = DateTime.Now,
+                Items = new List<CarritoItem>()
             };
 
             Add(orden);

@@ -1,0 +1,162 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Tomates",
+    "Precio": 1200,
+    "UnidadMedida": "Kg",
+    "Stock": 50,
+    "ProveedorId": 1
+  },
+  {
+    "Id": 2,
+    "Nombre": "Lechuga",
+    "Precio": 800,
+    "UnidadMedida": "Unidad",
+    "Stock": 40,
+    "ProveedorId": 2
+  },
+  {
+    "Id": 3,
+    "Nombre": "Zanahorias",
+    "Precio": 900,
+    "UnidadMedida": "Kg",
+    "Stock": 60,
+    "ProveedorId": 3
+  },
+  {
+    "Id": 4,
+    "Nombre": "Papas",
+    "Precio": 1100,
+    "UnidadMedida": "Kg",
+    "Stock": 70,
+    "ProveedorId": 4
+  },
+  {
+    "Id": 5,
+    "Nombre": "Manzanas",
+    "Precio": 1500,
+    "UnidadMedida": "Kg",
+    "Stock": 50,
+    "ProveedorId": 5
+  },
+  {
+    "Id": 6,
+    "Nombre": "Peras",
+    "Precio": 1400,
+    "UnidadMedida": "Kg",
+    "Stock": 45,
+    "ProveedorId": 6
+  },
+  {
+    "Id": 7,
+    "Nombre": "Aguacates",
+    "Precio": 2000,
+    "UnidadMedida": "Unidad",
+    "Stock": 30,
+    "ProveedorId": 7
+  },
+  {
+    "Id": 8,
+    "Nombre": "Bananos",
+    "Precio": 600,
+    "UnidadMedida": "Unidad",
+    "Stock": 100,
+    "ProveedorId": 8
+  },
+  {
+    "Id": 9,
+    "Nombre": "Huevos",
+    "Precio": 1800,
+    "UnidadMedida": "Docena",
+    "Stock": 20,
+    "ProveedorId": 9
+  },
+  {
+    "Id": 10,
+    "Nombre": "Leche",
+    "Precio": 950,
+    "UnidadMedida": "L",
+    "Stock": 50,
+    "ProveedorId": 10
+  },
+  {
+    "Id": 11,
+    "Nombre": "Yogurt",
+    "Precio": 600,
+    "UnidadMedida": "Botella",
+    "Stock": 40,
+    "ProveedorId": 11
+  },
+  {
+    "Id": 12,
+    "Nombre": "Queso",
+    "Precio": 2200,
+    "UnidadMedida": "Kg",
+    "Stock": 35,
+    "ProveedorId": 12
+  },
+  {
+    "Id": 13,
+    "Nombre": "Pan",
+    "Precio": 900,
+    "UnidadMedida": "Unidad",
+    "Stock": 25,
+    "ProveedorId": 13
+  },
+  {
+    "Id": 14,
+    "Nombre": "Arroz",
+    "Precio": 1200,
+    "UnidadMedida": "Kg",
+    "Stock": 80,
+    "ProveedorId": 14
+  },
+  {
+    "Id": 15,
+    "Nombre": "Frijoles",
+    "Precio": 1600,
+    "UnidadMedida": "Kg",
+    "Stock": 70,
+    "ProveedorId": 15
+  },
+  {
+    "Id": 16,
+    "Nombre": "Azúcar",
+    "Precio": 1000,
+    "UnidadMedida": "Kg",
+    "Stock": 90,
+    "ProveedorId": 16
+  },
+  {
+    "Id": 17,
+    "Nombre": "Café",
+    "Precio": 2800,
+    "UnidadMedida": "Kg",
+    "Stock": 20,
+    "ProveedorId": 17
+  },
+  {
+    "Id": 18,
+    "Nombre": "Aceite",
+    "Precio": 1500,
+    "UnidadMedida": "Botella",
+    "Stock": 30,
+    "ProveedorId": 18
+  },
+  {
+    "Id": 19,
+    "Nombre": "Sal",
+    "Precio": 500,
+    "UnidadMedida": "Kg",
+    "Stock": 100,
+    "ProveedorId": 19
+  },
+  {
+    "Id": 20,
+    "Nombre": "Miel",
+    "Precio": 3500,
+    "UnidadMedida": "Botella",
+    "Stock": 15,
+    "ProveedorId": 20
+  }
+]

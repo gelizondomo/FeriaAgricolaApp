@@ -19,20 +19,12 @@
         public string Nombre { get; set; } = string.Empty;
 
         /// <summary>
-        /// Gets y sets de la feria.
+        /// Gets y sets del feria id.
         /// </summary>
         /// <value>
         /// La  feria.
         /// </value>
-        public string Feria { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Gets y sets los productos.
-        /// </summary>
-        /// <value>
-        /// Los productos.
-        /// </value>
-        public List<Producto> Productos { get; set; } = new List<Producto>();
+        public int FeriaId { get; set; }
 
     }
 }

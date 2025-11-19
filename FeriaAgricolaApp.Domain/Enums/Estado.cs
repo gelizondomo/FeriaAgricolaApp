@@ -6,6 +6,7 @@
         Confirmado,
         Enviado,
         Entregado,
-        Cancelado
+        Cancelado,
+        Completado
     }
 }

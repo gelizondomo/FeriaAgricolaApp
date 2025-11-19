@@ -1,10 +1,5 @@
-﻿using FeriaAgricolaApp.Domain;
-using FeriaBox.Application.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FeriaAgricolaApp.Application;
+using FeriaAgricolaApp.Domain;
 
 namespace FeriaAgricolaApp.Presentation.Controllers
 {
@@ -23,6 +18,18 @@ namespace FeriaAgricolaApp.Presentation.Controllers
         }
 
         /// <summary>
+        /// Login con correo y password.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <param name="password">The password.</param>
+        /// <returns></returns>
+        public Usuario? Login(string email, string password)
+        {
+            return this.usuarioService.Login(email, password);
+        }
+
+
+        /// <summary>
         /// Registro del usuario.
         /// </summary>
         /// <param name="nombre">The nombre.</param>
@@ -35,15 +42,5 @@ namespace FeriaAgricolaApp.Presentation.Controllers
             return usuarioService.RegistrarUsuario(nombre, email, password, telefono);
         }
 
-        /// <summary>
-        /// Login con correo y password.
-        /// </summary>
-        /// <param name="email">The email.</param>
-        /// <param name="password">The password.</param>
-        /// <returns></returns>
-        public Usuario? Login(string email, string password)
-        {
-            return this.usuarioService.Login(email, password);
-        }
     }
 }
