@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36603.0
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11312.210 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Domain", "FeriaAgricolaApp.Domain\FeriaAgricolaApp.Domain.csproj", "{14793AC5-C77B-46A9-A9EE-DBF562CECDCB}"
 EndProject
@@ -12,12 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Application", "FeriaAgricolaApp.Application\FeriaAgricolaApp.Application.csproj", "{5D8AA76E-0465-4DE8-9CE3-210508C26F21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Web", "FeriaAgricolaApp.Web\FeriaAgricolaApp.Web.csproj", "{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{0A874BDB-D302-46DB-836C-05D9BC0DCB58} = {0A874BDB-D302-46DB-836C-05D9BC0DCB58}
-		{14793AC5-C77B-46A9-A9EE-DBF562CECDCB} = {14793AC5-C77B-46A9-A9EE-DBF562CECDCB}
-		{5D8AA76E-0465-4DE8-9CE3-210508C26F21} = {5D8AA76E-0465-4DE8-9CE3-210508C26F21}
-		{704698E3-38DB-4674-8D5E-77F6A61BDAA4} = {704698E3-38DB-4674-8D5E-77F6A61BDAA4}
-	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.ApplicationTest", "FeriaAgricolaApp.Tests\FeriaAgricolaApp.ApplicationTest.csproj", "{5AC9EF4A-80DB-413F-AC42-C0564D685811}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8311CC5A-DFF0-40A6-8F4E-2139C3FD63E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +43,16 @@ Global
 		{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AC9EF4A-80DB-413F-AC42-C0564D685811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC9EF4A-80DB-413F-AC42-C0564D685811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC9EF4A-80DB-413F-AC42-C0564D685811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC9EF4A-80DB-413F-AC42-C0564D685811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5AC9EF4A-80DB-413F-AC42-C0564D685811} = {8311CC5A-DFF0-40A6-8F4E-2139C3FD63E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F224D7F-0558-4703-80CC-B6E5F3C17EE0}
