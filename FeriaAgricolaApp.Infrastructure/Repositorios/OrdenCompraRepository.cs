@@ -85,36 +85,5 @@ namespace FeriaAgricolaApp.Infrastructure.Repositorios
             dataHandler.SaveData(path: path, items);
 
         }
-
-
-        /// <summary>
-        /// Obtener el estado orden.
-        /// </summary>
-        /// <param name="usuarioId">El usuario id.</param>
-        /// <returns></returns>
-        public OrdenCompra? ObtenerEstadoOrden (int usuarioId)
-        {
-            return items.FirstOrDefault(o => o.UsuarioId == usuarioId && o.EstadoCompra == Estado.Pendiente);
-        }
-
-
-        /// <summary>
-        /// Crear estado orden.
-        /// </summary>
-        /// <param name="usuarioId">El usuario id.</param>
-        /// <returns></returns>
-        public OrdenCompra CrearEstadoOrden(int usuarioId)
-        {
-            var orden = new OrdenCompra
-            {
-                UsuarioId = usuarioId,
-                EstadoCompra = Estado.Pendiente,
-                FechaCompra = DateTime.Now,
-                Items = new List<CarritoItem>()
-            };
-
-            Add(orden);
-            return orden;
-        }
     }
 }

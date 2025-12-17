@@ -32,7 +32,7 @@
             btnEliminar = new Button();
             btnComprar = new Button();
             lblDireccion = new Label();
-            txtDireccion = new TextBox();
+            cmbDirecciones = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             dgvCarrito.Name = "dgvCarrito";
             dgvCarrito.ReadOnly = true;
             dgvCarrito.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCarrito.Size = new Size(640, 300);
+            dgvCarrito.Size = new Size(640, 296);
             dgvCarrito.TabIndex = 0;
             // 
             // btnEliminar
@@ -76,12 +76,14 @@
             lblDireccion.TabIndex = 1;
             lblDireccion.Text = "Dirección de entrega:";
             // 
-            // txtDireccion
+            // cmbDirecciones
             // 
-            txtDireccion.Location = new Point(150, 337);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(320, 23);
-            txtDireccion.TabIndex = 2;
+            cmbDirecciones.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDirecciones.FormattingEnabled = true;
+            cmbDirecciones.Location = new Point(145, 332);
+            cmbDirecciones.Name = "cmbDirecciones";
+            cmbDirecciones.Size = new Size(400, 23);
+            cmbDirecciones.TabIndex = 0;
             // 
             // FrmCarrito
             // 
@@ -90,7 +92,7 @@
             ClientSize = new Size(680, 430);
             Controls.Add(dgvCarrito);
             Controls.Add(lblDireccion);
-            Controls.Add(txtDireccion);
+            Controls.Add(cmbDirecciones);
             Controls.Add(btnEliminar);
             Controls.Add(btnComprar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -108,6 +110,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.ComboBox cmbDirecciones;
     }
 }

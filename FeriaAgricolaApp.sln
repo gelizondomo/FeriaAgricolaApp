@@ -11,6 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Presentati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Application", "FeriaAgricolaApp.Application\FeriaAgricolaApp.Application.csproj", "{5D8AA76E-0465-4DE8-9CE3-210508C26F21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaAgricolaApp.Web", "FeriaAgricolaApp.Web\FeriaAgricolaApp.Web.csproj", "{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A874BDB-D302-46DB-836C-05D9BC0DCB58} = {0A874BDB-D302-46DB-836C-05D9BC0DCB58}
+		{14793AC5-C77B-46A9-A9EE-DBF562CECDCB} = {14793AC5-C77B-46A9-A9EE-DBF562CECDCB}
+		{5D8AA76E-0465-4DE8-9CE3-210508C26F21} = {5D8AA76E-0465-4DE8-9CE3-210508C26F21}
+		{704698E3-38DB-4674-8D5E-77F6A61BDAA4} = {704698E3-38DB-4674-8D5E-77F6A61BDAA4}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +41,10 @@ Global
 		{5D8AA76E-0465-4DE8-9CE3-210508C26F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D8AA76E-0465-4DE8-9CE3-210508C26F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D8AA76E-0465-4DE8-9CE3-210508C26F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AAC13F-9277-4C40-ACB7-EC4A73CF1AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

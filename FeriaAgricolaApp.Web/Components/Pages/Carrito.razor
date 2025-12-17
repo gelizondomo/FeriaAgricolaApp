@@ -1,0 +1,167 @@
+﻿@page "/carrito"
+@using FeriaAgricolaApp.Application.Controllers
+
+@inject CarritoController CarritoController
+@inject DireccionService DireccionService
+@inject AppState State
+@inject NavigationManager Nav
+
+<h3>Carrito de Compras</h3>
+
+@if (State.UsuarioActual == null)
+{
+    <p>Debe iniciar sesión.</p>
+}
+else
+{
+    @if (!items.Any())
+    {
+        <p>No hay productos en el carrito.</p>
+    }
+    else
+    {
+        <!-- ================= CARRITO ================= -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unit.</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in items)
+                {
+                    <tr>
+                        <td>@i.NombreProducto</td>
+                        <td>@i.Cantidad</td>
+                        <td>₡@i.TotalLinea</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger"
+                                    @onclick="() => QuitarProducto(i.ProductoId)">
+                                Quitar
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h5>Total: ₡@totalCarrito</h5>
+
+        <!-- ================= DIRECCIONES ================= -->
+        <div class="mb-3">
+            <label class="form-label">Dirección de entrega</label>
+            <select class="form-select" @bind="direccionSeleccionadaId">
+                @foreach (var d in direcciones)
+                {
+                    <option value="@d.Id">
+                        @d.DireccionCompleta (@d.Provincia)
+                    </option>
+                }
+            </select>
+        </div>
+
+        <!-- ================= COMPRAR ================= -->
+        <button class="btn btn-success" @onclick="ProcesarCompra">
+            Finalizar Compra
+        </button>
+
+        @if (!string.IsNullOrEmpty(mensaje))
+        {
+            <div class="alert alert-info mt-3">
+                @mensaje
+            </div>
+        }
+    }
+}
+
+@code
+{
+    // ================= MODELOS PARA LA VISTA =================
+    private List<CarritoItemView> items = new();
+    private List<Direccion> direcciones = new();
+
+    private int direccionSeleccionadaId;
+    private decimal totalCarrito;
+
+    private string mensaje = string.Empty;
+
+    // ================= INIT =================
+    protected override void OnInitialized()
+    {
+        if (State.UsuarioActual == null)
+            return;
+
+        CargarCarrito();
+        CargarDirecciones();
+    }
+
+    // ================= CARGA =================
+    private void CargarCarrito()
+    {
+        var orden = CarritoController.ObtenerCarrito(State.UsuarioActual!.Id);
+
+        items = orden.Items.Select(i => new CarritoItemView
+        {
+            ProductoId = i.ProductoId,
+            NombreProducto = CarritoController.ObtenerNombreProducto(i.ProductoId),
+            Cantidad = i.Cantidad,
+            TotalLinea = CarritoController.ObtenerTotalProducto(i.ProductoId, i.Cantidad)
+        }).ToList();
+
+        totalCarrito = orden.Total;
+    }
+
+    private void CargarDirecciones()
+    {
+        direcciones = DireccionService.ObtenerPorUsuario(State.UsuarioActual!.Id);
+
+        if (direcciones.Any())
+            direccionSeleccionadaId = direcciones.First(d => d.EsPrincipal).Id;
+    }
+
+    // ================= ACCIONES =================
+    private void QuitarProducto(int productoId)
+    {
+        CarritoController.QuitarProducto(State.UsuarioActual!.Id, productoId);
+        CargarCarrito();
+    }
+
+    private void ProcesarCompra()
+    {
+        var direccion = direcciones
+            .FirstOrDefault(d => d.Id == direccionSeleccionadaId);
+
+        if (direccion == null)
+        {
+            mensaje = "Debe seleccionar una dirección.";
+            return;
+        }
+
+        var resultado = CarritoController.ProcesarCompra(
+            State.UsuarioActual!.Id,
+            direccion.DireccionCompleta);
+
+        if (!resultado.Exito)
+        {
+            mensaje = "No se pudo procesar la compra.";
+            return;
+        }
+
+        mensaje = $"Compra realizada con éxito. Factura: {resultado.Factura.CodigoFactura} - Total ₡{resultado.Factura.Total}";
+
+        CargarCarrito();
+    }
+
+    // ================= VIEWMODEL =================
+    private class CarritoItemView
+    {
+        public int ProductoId { get; set; }
+        public string NombreProducto { get; set; } = string.Empty;
+        public int Cantidad { get; set; }
+        public decimal TotalLinea { get; set; }
+    }
+}

@@ -5,6 +5,24 @@
     /// </summary>
     public class Direccion
     {
+
+        /// <summary>
+        /// Gets y sets del id de dirección.
+        /// </summary>
+        /// <value>
+        /// El id.
+        /// </value>
+        public int Id { get; set; }
+
+
+        /// <summary>
+        /// Gets y sets del usuarioId.
+        /// </summary>
+        /// <value>
+        /// El usuarioId.
+        /// </value>
+        public int UsuarioId { get; set; }
+
         /// <summary>
         /// Gets y sets la provincia.
         /// </summary>
@@ -47,7 +65,7 @@
 
         public override string ToString()
         {
-            return $"{DireccionCompleta} - {Provincia}/{Canton}/{Distrito}";
+            return $"{Provincia}, {Canton}, {Distrito}, {DireccionCompleta}";
         }
     }
 }

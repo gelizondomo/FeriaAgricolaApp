@@ -28,6 +28,9 @@
     <None Update="Data\Compras.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Direcciones.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Facturas.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

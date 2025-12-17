@@ -60,5 +60,20 @@ namespace FeriaAgricolaApp.Domain
         /// </value>
         public Estado EstadoCompra{ get; set; } = Estado.Pendiente;
 
+        /// <summary>
+        /// Gets y sets del feria id.
+        /// </summary>
+        /// <value>
+        /// El feria id.
+        /// </value>
+        public int FeriaId { get; set; }
+
+        /// <summary>
+        /// Gets y sets del proveedor id.
+        /// </summary>
+        /// <value>
+        /// El proveedor id.
+        /// </value>
+        public int ProveedorId { get; set; }
     }
 }

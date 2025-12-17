@@ -77,7 +77,7 @@ namespace FeriaAgricolaApp.Application
         /// Obtiene todos los usuarios registrados en el sistema.
         /// </summary>
         /// <returns>Lista de usuarios.</returns>
-        public List<Usuario> ObtenerTodos() => usuarioRepo.GetAll();
+        public List<Usuario> GetAll() => usuarioRepo.GetAll();
 
         /// <summary>
         /// Obteners por id.

@@ -28,7 +28,7 @@ namespace FeriaAgricolaApp.Application
         /// Obtiene todos los productos disponibles en el repositorio.
         /// </summary>
         /// <returns>Lista de productos.</returns>
-        public List<Producto> ObtenerTodos() => productoRepo.GetAll();
+        public List<Producto> GetAll() => productoRepo.GetAll();
 
         /// <summary>
         /// Obtiene un producto por su identificador único.
@@ -36,17 +36,6 @@ namespace FeriaAgricolaApp.Application
         /// <param name="id">Identificador del producto.</param>
         /// <returns>El producto correspondiente, o <c>null</c> si no se encuentra.</returns>
         public Producto? GetById(int id) => productoRepo.GetById(id);
-
-
-        /// <summary>
-        /// Actualizar el producto.
-        /// </summary>
-        /// <param name="producto">El producto.</param>
-        public void ActualizarProducto(Producto producto)
-        {
-            productoRepo.Update(producto);
-        }
-
 
         /// <summary>
         /// Descontar del stock.
@@ -75,45 +64,14 @@ namespace FeriaAgricolaApp.Application
 
 
         /// <summary>
-        /// Agregar el producto.
+        /// Filtrar por provedor.
         /// </summary>
-        /// <param name="nuevo">El nuevo producto</param>
-        public void AgregarProducto(Producto nuevo)
+        /// <param name="proveedorId">El proveedor id.</param>
+        /// <returns></returns>
+        public List<Producto> FiltrarPorProvedor(List<int> proveedorId)
         {
-            productoRepo.Add(nuevo);
+            return productoRepo.GetAll().Where(p => proveedorId.Contains(p.ProveedorId)).ToList();
         }
 
-        /// <summary>
-        /// Filtra productos por el identificador del productor.
-        /// </summary>
-        /// <param name="proveedorId">Identificador del productor.</param>
-        /// <returns>Lista de productos asociados al productor.</returns>
-        public List<Producto> FiltrarPorProvedor(int proveedorId)
-        {
-            return productoRepo.GetAll().Where(p => p.ProveedorId == proveedorId).ToList();
-        }
-
-
-        /// <summary>
-        /// Obtener por feria.
-        /// </summary>
-        /// <param name="feriaId">La feria id.</param>
-        /// <returns></returns>
-        public List<Producto> ObtenerPorFeria(int feriaId)
-        => productoRepo.GetAll().Where(p => p.FeriaId == feriaId).ToList();
-
-
-        /// <summary>
-        /// Buscars por nombre producto y feria.
-        /// </summary>
-        /// <param name="nombre">El nombre.</param>
-        /// <param name="feriaId">La feria id.</param>
-        /// <returns></returns>
-        public List<Producto> BuscarPorNombreYFeria(string nombre, int feriaId)
-            => productoRepo.GetAll()
-                  .Where(p => p.FeriaId == feriaId &&
-                              p.Nombre.Contains(nombre, StringComparison.OrdinalIgnoreCase))
-                  .ToList();
     }
 }
-

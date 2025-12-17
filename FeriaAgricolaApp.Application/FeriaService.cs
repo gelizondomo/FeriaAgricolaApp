@@ -28,7 +28,7 @@ namespace FeriaAgricolaApp.Application
         /// Obtener todas las ferias.
         /// </summary>
         /// <returns></returns>
-        public List<Feria> ObtenerTodas()
+        public List<Feria> GetAll()
         {
             return feriaRepo.GetAll();
         }

@@ -24,23 +24,27 @@ namespace FeriaAgricolaApp.Application
             this.productoRepo = productoRepo;
         }
 
-        /// <summary>
-        /// Actualiza el inventario al registrar una venta.
-        /// </summary>
-        /// <param name="productoId">Identificador del producto vendido.</param>
-        /// <param name="cantidadVendida">Cantidad vendida del producto.</param>
-        /// <returns>
-        /// <c>true</c> si la operación fue exitosa; <c>false</c> si el producto no existe o no hay suficiente stock.
-        /// </returns>
-        public bool ActualizarInventario(int productoId, int cantidadVendida)
-        {
-            var producto = productoRepo.GetById(productoId);
-            if (producto == null || producto.Stock < cantidadVendida)
-                return false;
 
-            producto.Stock -= cantidadVendida;
+        /// <summary>
+        /// Actualiza el stock.
+        /// </summary>
+        /// <param name="productoId">El producto id.</param>
+        /// <param name="nuevoStock">El nuevo stock.</param>
+        /// <exception cref="System.Exception">
+        /// Stock inválido
+        /// o
+        /// Producto no encontrado
+        /// </exception>
+        public void ActualizarStock(int productoId, int nuevoStock)
+        {
+            if (nuevoStock < 0)
+                throw new Exception("Stock inválido");
+
+            var producto = productoRepo.GetById(productoId)
+                ?? throw new Exception("Producto no encontrado");
+
+            producto.Stock = nuevoStock;
             productoRepo.Update(producto);
-            return true;
         }
 
     }

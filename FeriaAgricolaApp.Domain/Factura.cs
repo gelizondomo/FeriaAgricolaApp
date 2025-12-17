@@ -33,6 +33,22 @@
         /// </value>
         public int UsuarioId { get; set; }
 
+        /// <summary>
+        /// Gets t sets el feria id.
+        /// </summary>
+        /// <value>
+        /// El feria id.
+        /// </value>
+        public int FeriaId { get; set; }
+
+        /// <summary>
+        /// Gets t sets el proveedor id.
+        /// </summary>
+        /// <value>
+        /// El proveedor id.
+        /// </value>
+        public int ProveedorId { get; set; }
+
 
         /// <summary>
         /// Gets or sets la fecha factura.

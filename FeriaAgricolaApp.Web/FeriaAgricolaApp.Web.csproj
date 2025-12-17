@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FeriaAgricolaApp.Application\FeriaAgricolaApp.Application.csproj" />
+    <ProjectReference Include="..\FeriaAgricolaApp.Domain\FeriaAgricolaApp.Domain.csproj" />
+    <ProjectReference Include="..\FeriaAgricolaApp.Infrastructure\FeriaAgricolaApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

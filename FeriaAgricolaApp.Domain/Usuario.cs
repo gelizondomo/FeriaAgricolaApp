@@ -1,4 +1,6 @@
-﻿namespace FeriaAgricolaApp.Domain
+﻿using FeriaAgricolaApp.Domain.Enums;
+
+namespace FeriaAgricolaApp.Domain
 {
     /// <summary>
     /// Modelo representando a Usuarios
@@ -46,5 +48,29 @@
         public string Telefono { get; set; } = string.Empty;
 
 
+        /// <summary>
+        /// Gets y sets de direcciones.
+        /// </summary>
+        /// <value>
+        /// Las direcciones.
+        /// </value>
+        public List<Direccion> Direcciones { get; set; } = new();
+
+        /// <summary>
+        /// Gets y sets del rol.
+        /// </summary>
+        /// <value>
+        /// El rol.
+        /// </value>
+        public RolUsuario Rol { get; set; } = RolUsuario.Comprador;
+
+        /// <summary>
+        /// Gets y sets valor que indica si este <see cref="Usuario"/> está activo.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> si está activo; de lo contrario, <c>false</c>.
+        /// </value>
+
+        public bool Activo { get; set; } = true;
     }
 }

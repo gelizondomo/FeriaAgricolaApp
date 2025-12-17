@@ -1,0 +1,142 @@
+﻿@page "/admin/proveedoresAdm"
+
+@using FeriaAgricolaApp.Application.Controllers
+@using FeriaAgricolaApp.Domain
+
+@inject AdminController AdminController
+@inject ProveedorService ProveedorService
+@inject FeriaService FeriaService
+@inject AppState State
+@inject NavigationManager Nav
+
+<h3>Administración de Proveedores</h3>
+
+@if (State.UsuarioActual == null || !State.EsAdmin)
+{
+    <div class="alert alert-danger">
+        Acceso denegado. Solo administradores.
+    </div>
+}
+else
+{
+    <!-- ================= LISTADO ================= -->
+    <h5>Proveedores registrados</h5>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Feria asignada</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in proveedores)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Nombre</td>
+                    <td>@ObtenerNombreFeria(p.FeriaId)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- ================= CREAR ================= -->
+    <h5 class="mt-4">Crear nuevo proveedor</h5>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" @bind="nuevoProveedorNombre" />
+        </div>
+        <div class="col">
+            <label class="form-label">Feria</label>
+            <select class="form-select" @bind="feriaSeleccionadaId">
+                <option value="0">Seleccione una feria</option>
+                @foreach (var f in ferias)
+                {
+                    <option value="@f.Id">@f.Nombre</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" @onclick="CrearProveedor">
+        Crear proveedor
+    </button>
+
+    @if (!string.IsNullOrEmpty(mensaje))
+    {
+        <div class="alert alert-info mt-3">
+            @mensaje
+        </div>
+    }
+}
+
+@code
+{
+    // ================= DATOS =================
+    private List<Proveedor> proveedores = new();
+    private List<Feria> ferias = new();
+
+    private string nuevoProveedorNombre = string.Empty;
+    private int feriaSeleccionadaId;
+
+    private string mensaje = string.Empty;
+
+    // ================= INIT =================
+    protected override void OnInitialized()
+    {
+        if (State.UsuarioActual == null || !State.EsAdmin)
+        {
+            Nav.NavigateTo("/login");
+            return;
+        }
+
+        CargarDatos();
+    }
+
+    // ================= CARGA =================
+    private void CargarDatos()
+    {
+        proveedores = ProveedorService.GetAll();
+        ferias = FeriaService.GetAll();
+    }
+
+    // ================= ACCIONES =================
+    private void CrearProveedor()
+    {
+        if (string.IsNullOrWhiteSpace(nuevoProveedorNombre))
+        {
+            mensaje = "Debe ingresar el nombre del proveedor.";
+            return;
+        }
+
+        if (feriaSeleccionadaId <= 0)
+        {
+            mensaje = "Debe seleccionar una feria.";
+            return;
+        }
+
+        var proveedor = new Proveedor
+        {
+            Nombre = nuevoProveedorNombre,
+            FeriaId = feriaSeleccionadaId
+        };
+
+        AdminController.CrearProveedor(proveedor);
+
+        mensaje = $"Proveedor '{nuevoProveedorNombre}' creado correctamente.";
+
+        nuevoProveedorNombre = string.Empty;
+        feriaSeleccionadaId = 0;
+
+        CargarDatos();
+    }
+
+    private string ObtenerNombreFeria(int feriaId)
+    {
+        return ferias.FirstOrDefault(f => f.Id == feriaId)?.Nombre ?? "N/D";
+    }
+}

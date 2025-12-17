@@ -1,5 +1,5 @@
 ﻿using FeriaAgricolaApp.Domain;
-using FeriaAgricolaApp.Presentation.Controllers;
+using FeriaAgricolaApp.Application.Controllers;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,7 @@ namespace FeriaAgricolaApp.Presentation.Views
             this.usuario = usuario;
             InitializeComponent();
             CargarCarrito();
+            CargarDirecciones();
         }
 
         private void CargarCarrito()
@@ -43,6 +44,16 @@ namespace FeriaAgricolaApp.Presentation.Views
             dgvCarrito.DataSource = lista;
         }
 
+        private void CargarDirecciones()
+        {
+            var direcciones = carritoController.ObtenerDireccionesDeEntrega(usuario.Id);
+            cmbDirecciones.DataSource = direcciones;
+            cmbDirecciones.DisplayMember = "DireccionCompleta";
+            cmbDirecciones.ValueMember = "Id";
+            if (direcciones.Count > 0)
+                cmbDirecciones.SelectedIndex = 0;
+        }
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvCarrito.SelectedRows.Count == 0) 
@@ -59,28 +70,28 @@ namespace FeriaAgricolaApp.Presentation.Views
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            var direccion = txtDireccion.Text.Trim();
-            if (string.IsNullOrWhiteSpace(direccion))
+            if (cmbDirecciones.SelectedItem == null)
             {
-                MessageBox.Show("Ingrese una dirección de entrega.");
+                MessageBox.Show("Debe seleccionar una dirección de entrega.");
                 return;
             }
 
-            var resultado = carritoController.ProcesarCompra(usuario.Id, direccion);
+            var direccionSeleccionada = (Direccion)cmbDirecciones.SelectedItem;
+
+            var resultado = carritoController.ProcesarCompra(
+                usuario.Id,
+                direccionSeleccionada.DireccionCompleta
+            );
 
             if (!resultado.Exito)
             {
-                MessageBox.Show("No se pudo completar la compra.");
+                MessageBox.Show("No se pudo procesar la compra. Verifique el carrito.");
                 return;
             }
 
-            _ = MessageBox.Show(
-                $"Compra realizada.\nFactura generada: {resultado.Factura.CodigoFactura}",
-                "Éxito",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            MessageBox.Show($"Compra realizada.\nFactura: {resultado.Factura.CodigoFactura}\nTotal: {resultado.Factura.Total:C}");
 
+            
             CargarCarrito();
         }
     }
