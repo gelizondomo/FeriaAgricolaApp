@@ -1,0 +1,123 @@
+﻿@page "/admin/inventarioAdm"
+
+@using FeriaAgricolaApp.Application.Controllers
+@using FeriaAgricolaApp.Domain
+
+@inject AdminController AdminController
+@inject ProductoService ProductoService
+@inject ProveedorService ProveedorService
+@inject FeriaService FeriaService
+@inject AppState State
+@inject NavigationManager Nav
+
+<h3>Administración de Inventario</h3>
+
+@if (State.UsuarioActual == null || !State.EsAdmin)
+{
+    <div class="alert alert-danger">
+        Acceso denegado. Solo administradores.
+    </div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Proveedor</th>
+                <th>Feria</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th style="width:180px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in inventario)
+            {
+                <tr>
+                    <td>@item.NombreProducto</td>
+                    <td>@item.NombreProveedor</td>
+                    <td>@item.NombreFeria</td>
+                    <td>
+                        <input type="number"
+                               class="form-control"
+                               @bind="item.Stock" />
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary"
+                                @onclick="() => GuardarCambios(item)">
+                            Guardar
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (!string.IsNullOrEmpty(mensaje))
+    {
+        <div class="alert alert-info mt-3">
+            @mensaje
+        </div>
+    }
+}
+
+@code
+{
+    // ================= VIEWMODEL =================
+    private List<InventarioView> inventario = new();
+    private string mensaje = string.Empty;
+
+    // ================= INIT =================
+    protected override void OnInitialized()
+    {
+        if (State.UsuarioActual == null || !State.EsAdmin)
+        {
+            Nav.NavigateTo("/login");
+            return;
+        }
+
+        CargarInventario();
+    }
+
+    // ================= CARGA =================
+    private void CargarInventario()
+    {
+        var productos = ProductoService.GetAll();
+        var proveedores = ProveedorService.GetAll();
+        var ferias = FeriaService.GetAll();
+
+        inventario = productos.Select(p => new InventarioView
+        {
+            ProductoId = p.Id,
+            NombreProducto = p.Nombre,
+            ProveedorId = p.ProveedorId,
+            NombreProveedor = proveedores.FirstOrDefault(x => x.Id == p.ProveedorId)?.Nombre ?? "N/D",
+            Stock = p.Stock
+        }).ToList();
+    }
+
+    // ================= ACCIONES =================
+    private void GuardarCambios(InventarioView item)
+    {
+        AdminController.ActualizarStockProducto(item.ProductoId, item.Stock);
+
+        mensaje = $"Producto '{item.NombreProducto}' actualizado correctamente.";
+    }
+
+    // ================= VIEWMODEL =================
+    private class InventarioView
+    {
+        public int ProductoId { get; set; }
+        public string NombreProducto { get; set; } = string.Empty;
+
+        public int ProveedorId { get; set; }
+        public string NombreProveedor { get; set; } = string.Empty;
+
+        public int FeriaId { get; set; }
+        public string NombreFeria { get; set; } = string.Empty;
+
+        public int Stock { get; set; }
+    }
+}
+

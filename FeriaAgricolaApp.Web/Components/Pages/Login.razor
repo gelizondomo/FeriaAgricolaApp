@@ -1,0 +1,78 @@
+﻿@page "/login"
+
+@using FeriaAgricolaApp.Application.Controllers
+@using FeriaAgricolaApp.Domain
+@using FeriaAgricolaApp.Domain.Enums
+@inject LoginController LoginController
+@inject AppState State
+@inject NavigationManager Nav
+
+<h3>Iniciar Sesión</h3>
+
+<div class="card p-4" style="max-width:400px">
+    <div class="mb-3">
+        <label class="form-label">Correo</label>
+        <input class="form-control" @bind="email" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-control" @bind="password" />
+    </div>
+
+    <button class="btn btn-primary w-100" @onclick="LoginVeiw">
+        Entrar
+    </button>
+
+    <a class="btn btn-link w-100 mt-2" href="/registro">
+        Registrarse
+    </a>
+
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <div class="alert alert-danger mt-3">
+            @error
+        </div>
+    }
+</div>
+
+@code {
+    private string email = string.Empty;
+    private string password = string.Empty;
+    private string error = string.Empty;
+
+    private void LoginVeiw()
+    {
+        error = string.Empty;
+
+        if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+        {
+            error = "Debe ingresar el correo y la contraseña.";
+            return;
+        }
+
+        var usuario = LoginController.Login(email, password);
+
+        if (usuario == null)
+        {
+            error = "Credenciales incorrectas.";
+            return;
+        }
+
+        if (!usuario.Activo)
+        {
+            error = "El usuario está inactivo.";
+            return;
+        }
+
+        // Guardar sesión
+        State.SetUsuario(usuario);
+
+        // Redirigir según rol
+        if (usuario.Rol == RolUsuario.Administrador)
+            Nav.NavigateTo("/admin/reportes");
+        else
+            Nav.NavigateTo("/catalogo");
+    }
+}
+

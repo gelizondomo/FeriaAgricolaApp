@@ -1,5 +1,6 @@
 ﻿using FeriaAgricolaApp.Domain;
-using FeriaAgricolaApp.Presentation.Controllers;
+using FeriaAgricolaApp.Infrastructure.Configuration;
+using FeriaAgricolaApp.Application.Controllers;
 using System.Data;
 
 namespace FeriaAgricolaApp.Presentation.Views
@@ -8,6 +9,7 @@ namespace FeriaAgricolaApp.Presentation.Views
     {
         private readonly CatalogoController catalogoController;
         private readonly Usuario usuario;
+
         private List<Feria> ferias;
         private int feriaSeleccionada;
 
@@ -21,33 +23,124 @@ namespace FeriaAgricolaApp.Presentation.Views
         private void FrmCatalogoCarga(object sender, EventArgs e)
         {
             CargarFerias();
+
         }
 
         private void CargarFerias()
         {
-            ferias = catalogoController.ObtenerFerias();
-            cmbFerias.Items.Clear();
+            var direccionesUsuario = Program.DireccionService.ObtenerPorUsuario(usuario.Id);
 
-            foreach (var feria in ferias)
-                cmbFerias.Items.Add(new ComboBoxItem(feria.Nombre, feria.Id));
-
-            if (cmbFerias.Items.Count > 0)
-                cmbFerias.SelectedIndex = 0;
-        }
-
-        private void cmbFerias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbFerias.SelectedItem is ComboBoxItem item)
+            if (direccionesUsuario.Count == 0)
             {
-                feriaSeleccionada = item.Value;
-                CargarProductosPorFeria(item.Value);
+                // Sin direcciones → cargar todas las ferias
+                ferias = catalogoController.ObtenerFerias();
+            }
+            else
+            {
+                // Buscar principal o primera
+                var dirPrincipal = direccionesUsuario
+                    .FirstOrDefault(d => d.EsPrincipal)
+                    ?? direccionesUsuario.First();
+
+                string provincia = dirPrincipal.Provincia?.Trim() ?? "";
+
+                ferias = catalogoController.ObtenerFeriasPorProvincia(provincia);
+            }
+
+            cmbFerias.DataSource = ferias;
+            cmbFerias.DisplayMember = "Nombre";
+            cmbFerias.ValueMember = "Id";
+
+            if (ferias.Count > 0)
+            {
+                feriaSeleccionada = ferias[0].Id;
+                CargarProductosPorFeria(feriaSeleccionada);
             }
         }
-
         private void CargarProductosPorFeria(int feriaId)
         {
             var productos = catalogoController.ObtenerProductosPorFeria(feriaId);
-            dgvProductos.DataSource = productos;
+
+            var lista = productos.Select(p => new
+            {
+                p.Id,
+                Producto = p.Nombre,
+                Proveedor = catalogoController.FiltrarPorProveedor(p.ProveedorId),
+                p.Precio,
+                Unidad = p.UnidadMedida.ToString(),
+                p.Stock
+            }).ToList();
+
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = lista;
+        }
+
+        private void CargarProveedoresPorFeria(int feriaId)
+        {
+            var proveedores = catalogoController.ObtenerProveedoresPorFeria(feriaId);
+
+            // Insertar opción "Todos"
+            proveedores.Insert(0, new Proveedor
+            {
+                Id = 0,
+                Nombre = "Todos los proveedores"
+            });
+
+            cmbProveedores.DataSource = null;
+            cmbProveedores.DataSource = proveedores;
+            cmbProveedores.DisplayMember = "Nombre";
+            cmbProveedores.ValueMember = "Id";
+
+            cmbProveedores.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Cargar los productos por proveedor.
+        /// </summary>
+        /// <param name="proveedorId">The proveedor od.</param>
+        private void CargarProductosPorProveedor(int proveedorId)
+        {
+            var productos = catalogoController.ObtenerProductosPorProveedor(proveedorId);
+
+            var lista = productos.Select(p => new
+            {
+                p.Id,
+                Producto = p.Nombre,
+                Proveedor = catalogoController.FiltrarPorProveedor(p.ProveedorId),
+                Precio = p.Precio,
+                Unidad = p.UnidadMedida.ToString(),
+                Stock = p.Stock
+            }).ToList();
+
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = lista;
+        }
+
+        private void cmbProveedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProveedores.SelectedItem is Proveedor proveedor)
+            {
+                if (proveedor.Id == 0)
+                {
+                    // Todos los proveedores → volver a cargar por feria
+                    CargarProductosPorFeria(feriaSeleccionada);
+                }
+                else
+                {
+                    CargarProductosPorProveedor(proveedor.Id);
+                }
+            }
+        }
+
+
+        private void cmbFerias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFerias.SelectedItem is Feria feria)
+            {
+                feriaSeleccionada = feria.Id;
+                CargarProveedoresPorFeria(feria.Id);
+                CargarProductosPorFeria(feria.Id);
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -90,6 +183,11 @@ namespace FeriaAgricolaApp.Presentation.Views
             }
 
             public override string ToString() => Text;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

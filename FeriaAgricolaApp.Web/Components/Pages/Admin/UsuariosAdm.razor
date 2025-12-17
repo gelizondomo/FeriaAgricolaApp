@@ -1,0 +1,131 @@
+﻿@page "/admin/usuariosAdm"
+
+@using FeriaAgricolaApp.Application.Controllers
+@using FeriaAgricolaApp.Domain
+@inject AdminController AdminController
+@inject UsuarioService UsuarioService
+@inject AppState State
+@inject NavigationManager Nav
+
+<h3>Mantenimiento de Usuarios</h3>
+
+@if (State.UsuarioActual == null || !State.EsAdmin)
+{
+    <div class="alert alert-danger">
+        Acceso denegado. Solo administradores.
+    </div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th style="width:220px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in usuarios)
+            {
+                <tr>
+                    <td>@u.Id</td>
+                    <td>@u.Nombre</td>
+                    <td>@u.Email</td>
+                    <td>@u.Rol</td>
+                    <td>
+                        @if (u.Activo)
+                        {
+                            <span class="badge bg-success">Activo</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Inactivo</span>
+                        }
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-warning me-1"
+                                @onclick="() => ResetearPassword(u.Id)">
+                            Reset Pass
+                        </button>
+
+                        @if (u.Activo)
+                        {
+                            <button class="btn btn-sm btn-danger"
+                                    @onclick="() => DesactivarUsuario(u.Id)">
+                                Desactivar
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-sm btn-success"
+                                    @onclick="() => ActivarUsuario(u.Id)">
+                                Activar
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (!string.IsNullOrEmpty(mensaje))
+    {
+        <div class="alert alert-info mt-3">
+            @mensaje
+        </div>
+    }
+}
+
+@code
+{
+    // ================= DATOS =================
+    private List<Usuario> usuarios = new();
+    private string mensaje = string.Empty;
+
+    // ================= INIT =================
+    protected override void OnInitialized()
+    {
+        if (State.UsuarioActual == null || !State.EsAdmin)
+        {
+            Nav.NavigateTo("/login");
+            return;
+        }
+
+        CargarUsuarios();
+    }
+
+    // ================= CARGA =================
+    private void CargarUsuarios()
+    {
+        usuarios = UsuarioService.GetAll();
+    }
+
+    // ================= ACCIONES =================
+    private void DesactivarUsuario(int usuarioId)
+    {
+        AdminController.DesactivarUsuario(usuarioId);
+        mensaje = $"Usuario {usuarioId} desactivado.";
+        CargarUsuarios();
+    }
+
+    private void ActivarUsuario(int usuarioId)
+    {
+        AdminController.ActivarUsuario(usuarioId);
+        mensaje = $"Usuario {usuarioId} activado.";
+        CargarUsuarios();
+    }
+
+    private void ResetearPassword(int usuarioId)
+    {
+        // Contraseña temporal por defecto
+        var nuevaPass = "Temp1234";
+
+        AdminController.ResetearPasswordUsuario(usuarioId, nuevaPass);
+        mensaje = $"Contraseña del usuario {usuarioId} reiniciada a: {nuevaPass}";
+        CargarUsuarios();
+    }
+}

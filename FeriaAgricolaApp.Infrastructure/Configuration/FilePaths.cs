@@ -10,6 +10,7 @@ namespace FeriaAgricolaApp.Infrastructure.Configuration
     public static class FilePaths
     {
         public const string Usuarios = "Data/Usuarios.json";
+        public const string Direcciones = "Data/Direcciones.json";
         public const string Productos = "Data/Productos.json";
         public const string Proveedores = "Data/Proveedores.json";
         public const string Ferias = "Data/Ferias.json";

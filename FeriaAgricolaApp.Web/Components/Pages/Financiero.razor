@@ -1,0 +1,232 @@
+﻿@page "/financiero"
+
+@using FeriaAgricolaApp.Application.Controllers
+@using FeriaAgricolaApp.Domain
+@using FeriaAgricolaApp.Application.DTO
+
+@inject FinancieroController FinancieroController
+@inject AppState State
+@inject DescargaReporteService DownloadService
+@inject IJSRuntime JS
+
+<h3>Área Financiera</h3>
+
+@if (State.UsuarioActual == null)
+{
+    <p>Debe iniciar sesión.</p>
+}
+else
+{
+    <!-- ================= FILTRO FECHAS ================= -->
+    <div class="row mb-3">
+        <div class="col">
+            <label>Fecha inicio</label>
+            <input type="date" class="form-control" @bind="fechaInicio" />
+        </div>
+        <div class="col">
+            <label>Fecha fin</label>
+            <input type="date" class="form-control" @bind="fechaFin" />
+        </div>
+        <div class="col d-flex align-items-end">
+            <button class="btn btn-primary" @onclick="CargarReportes">
+                Generar Reportes
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= FACTURAS ================= -->
+    <h5>Facturas</h5>
+
+    @if (facturas.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var f in facturas)
+                {
+                    <tr>
+                        <td>@f.CodigoFactura</td>
+                        <td>@f.FechaFactura.ToShortDateString()</td>
+                        <td>₡@f.Total</td>
+                        <td>@f.DireccionEntrega</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay facturas para mostrar.</p>
+    }
+
+    <!-- ================= TOTALES ================= -->
+    <div class="mt-4">
+        <p><strong>Total mensual:</strong> ₡@totalMensual</p>
+    </div>
+
+    <!-- ================= TOP PRODUCTOS ================= -->
+    <h5>Top Productos</h5>
+
+    @if (topProductos.Any())
+    {
+        <ul>
+            @foreach (var p in topProductos)
+            {
+                <li>@p.Key - @p.Value unidades</li>
+            }
+        </ul>
+    }
+
+    <!-- ================= Más Venden ================= -->
+    <div class="row mt-4">
+        <div class="col">
+            <h6>Feria que más vende</h6>
+            <p>@feriaTop.Nombre - ₡@feriaTop.Total</p>
+        </div>
+        <div class="col">
+            <h6>Proveedor que más vende</h6>
+            <p>@proveedorTop.Nombre - ₡@proveedorTop.Total</p>
+        </div>
+    </div>
+
+    <!-- ================= GANANCIAS ================= -->
+    <h5 class="mt-4">Ganancias mensuales</h5>
+
+    <div class="row">
+        <div class="col">
+            <h6>Por Feria</h6>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Feria</th>
+                        <th>Mes</th>
+                        <th>Año</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in gananciasPorFeria)
+                    {
+                        <tr>
+                            <td>@r.Nombre</td>
+                            <td>@r.Mes</td>
+                            <td>@r.Anio</td>
+                            <td>₡@r.Total</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col">
+            <h6>Por Proveedor</h6>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Proveedor</th>
+                        <th>Mes</th>
+                        <th>Año</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in gananciasPorProveedor)
+                    {
+                        <tr>
+                            <td>@r.Nombre</td>
+                            <td>@r.Mes</td>
+                            <td>@r.Anio</td>
+                            <td>₡@r.Total</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ================= DESCARGAS ================= -->
+    <div class="mt-4">
+        <button class="btn btn-success me-2" @onclick="DescargarFeriaCsv">
+            Descargar Ganancias por Feria (CSV)
+        </button>
+        <button class="btn btn-success" @onclick="DescargarProveedorCsv">
+            Descargar Ganancias por Proveedor (CSV)
+        </button>
+    </div>
+}
+
+@code
+{
+    // ================= DATOS =================
+    private DateTime fechaInicio = DateTime.Now.AddMonths(-1);
+    private DateTime fechaFin = DateTime.Now;
+
+    private List<Factura> facturas = new();
+    private decimal totalMensual;
+    private Dictionary<string, int> topProductos = new();
+
+    private ReporteGananciaDTO feriaTop = new();
+    private ReporteGananciaDTO proveedorTop = new();
+
+    private List<ReporteGananciaDTO> gananciasPorFeria = new();
+    private List<ReporteGananciaDTO> gananciasPorProveedor = new();
+
+    // ================= INIT =================
+    protected override void OnInitialized()
+    {
+        if (State.UsuarioActual == null)
+            return;
+
+        facturas = FinancieroController.ObtenerFacturasUsuario(
+            State.UsuarioActual.Id);
+
+        totalMensual = FinancieroController.TotalMensual(
+            DateTime.Now.Month,
+            DateTime.Now.Year);
+
+        topProductos = FinancieroController.TopProductos();
+    }
+
+    // ================= ACCIONES =================
+    private void CargarReportes()
+    {
+        feriaTop = FinancieroController.FeriaQueMasVende(fechaInicio, fechaFin);
+        proveedorTop = FinancieroController.ProveedorQueMasVende(fechaInicio, fechaFin);
+
+        gananciasPorFeria = FinancieroController
+            .GananciasMensualesPorFeria(fechaInicio, fechaFin);
+
+        gananciasPorProveedor = FinancieroController
+            .GananciasMensualesPorProveedor(fechaInicio, fechaFin);
+    }
+
+    // ================= DESCARGAS =================
+    private async Task DescargarFeriaCsv()
+    {
+        var bytes = DownloadService.ToCsvBytes(gananciasPorFeria);
+        await DescargarArchivo("ganancias_por_feria.csv", bytes);
+    }
+
+    private async Task DescargarProveedorCsv()
+    {
+        var bytes = DownloadService.ToCsvBytes(gananciasPorProveedor);
+        await DescargarArchivo("ganancias_por_proveedor.csv", bytes);
+    }
+
+    private async Task DescargarArchivo(string nombre, byte[] bytes)
+    {
+        var base64 = Convert.ToBase64String(bytes);
+        await JS.InvokeVoidAsync(
+            "downloadFile",
+            nombre,
+            "text/csv",
+            base64);
+    }
+}

@@ -1,0 +1,85 @@
+﻿@page "/registro"
+
+@using FeriaAgricolaApp.Application.Controllers
+@using FeriaAgricolaApp.Domain
+@using FeriaAgricolaApp.Domain.Enums
+@inject LoginController LoginController
+@inject NavigationManager Nav
+
+<h3>Registro de Usuario</h3>
+
+<div class="card p-4" style="max-width:500px">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input class="form-control" @bind="nombre" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Correo</label>
+        <input class="form-control" @bind="email" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Teléfono</label>
+        <input class="form-control" @bind="telefono" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-control" @bind="password" />
+    </div>
+
+    <button class="btn btn-success w-100" @onclick="Registrar">
+        Registrarse
+    </button>
+
+    <button class="btn btn-secondary w-100 mt-2" @onclick="Volver">
+        Volver al Login
+    </button>
+
+    @if (!string.IsNullOrEmpty(mensaje))
+    {
+        <div class="alert alert-info mt-3">
+            @mensaje
+        </div>
+    }
+</div>
+
+@code {
+    private string nombre = string.Empty;
+    private string email = string.Empty;
+    private string telefono = string.Empty;
+    private string password = string.Empty;
+
+    private string mensaje = string.Empty;
+
+    private void Registrar()
+    {
+        mensaje = string.Empty;
+
+        if (string.IsNullOrWhiteSpace(nombre) ||
+            string.IsNullOrWhiteSpace(email) ||
+            string.IsNullOrWhiteSpace(password))
+        {
+            mensaje = "Debe completar todos los campos obligatorios.";
+            return;
+        }
+
+        // Llamar al método con los parámetros requeridos
+        var resultado = LoginController.RegistrarUsuario(nombre, email, password, telefono);
+
+        if (!resultado)
+        {
+            mensaje = "El correo ya está registrado.";
+            return;
+        }
+
+        mensaje = "Registro exitoso. Ahora puede iniciar sesión.";
+
+    }
+
+    private void Volver()
+    {
+        Nav.NavigateTo("/login");
+    }
+}

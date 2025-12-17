@@ -19,11 +19,11 @@ namespace FeriaAgricolaApp.Application
         /// <param name="ProductoService">Servicio de productos.</param>
         public OrdenCompraService(
             IRepository<OrdenCompra> ordenRepo,
-            ProductoService ProductoService)
+            ProductoService productoService) // nombre del parámetro en minúscula
         {
             this.ordenRepo = ordenRepo;
             this.productoService = productoService;
-        }
+        }   
 
         /// <summary>
         /// Obtiene o Crea la orden pendiente.
@@ -64,6 +64,23 @@ namespace FeriaAgricolaApp.Application
 
 
         /// <summary>
+        /// Calcula el total de productos.
+        /// </summary>
+        /// <param name="orden">La orden.</param>
+        /// <returns></returns>
+        private decimal CalcularTotal(OrdenCompra orden)
+        {
+            decimal total = 0;
+            foreach (var item in orden.Items)
+            {
+                var prod = productoService.GetById(item.ProductoId);
+                total += prod.Precio * item.Cantidad;
+
+            }
+            return total;
+        }
+
+        /// <summary>
         /// Finalizar la orden.
         /// </summary>
         /// <param name="usuarioId">El usuario id.</param>
@@ -86,6 +103,7 @@ namespace FeriaAgricolaApp.Application
             // Validación de inventario
             foreach (var item in orden.Items)
             {
+                if (item == null) throw new Exception("Item del carrito inválido.");
                 var prod = productoService.GetById(item.ProductoId);
                 if (prod == null)
                     throw new Exception("Producto no encontrado.");
@@ -102,54 +120,12 @@ namespace FeriaAgricolaApp.Application
 
             orden.EstadoCompra = Estado.Completado;
             orden.FechaCompra = DateTime.Now;
+            orden.Total = CalcularTotal(orden);
             orden.DireccionEntrega = direccionEntrega;
 
             ordenRepo.Update(orden);
             return orden;
         }
-
-
-        /// <summary>
-        /// Obtener el historial.
-        /// </summary>
-        /// <param name="usuarioId">The usuario id.</param>
-        /// <returns></returns>
-        public List<OrdenCompra> ObtenerHistorial(int usuarioId)
-        {
-            return ordenRepo
-                .GetAll()
-                .Where(o => o.UsuarioId == usuarioId &&
-                            o.EstadoCompra == Estado.Completado)
-                .ToList();
-        }
-
-        /// <summary>
-        /// Obtener el nombre producto.
-        /// </summary>
-        /// <param name="productoId">El producto id.</param>
-        /// <returns></returns>
-        public string ObtenerNombreProducto(int productoId)
-        {
-            var producto = productoService.GetById(productoId);
-
-            if (producto == null)
-                return "Producto no encontrado";
-
-            return producto.Nombre;
-        }
-
-        /// <summary>
-        /// Vaciar el carrito.
-        /// </summary>
-        /// <param name="usuarioId">The usuario id.</param>
-        public void VaciarCarrito(int usuarioId)
-        {
-            var carrito = ObtenerOCrearCarrito(usuarioId);
-            carrito.Items.Clear();
-            ordenRepo.Update(carrito);
-        }
-
-
     }
 }
 

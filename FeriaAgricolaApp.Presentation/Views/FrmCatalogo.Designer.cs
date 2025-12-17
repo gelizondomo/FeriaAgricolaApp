@@ -33,6 +33,10 @@
             btnBuscar = new Button();
             dgvProductos = new DataGridView();
             btnAgregar = new Button();
+            lblFeria = new Label();
+            cmbFerias = new ComboBox();
+            lblProveedor = new Label();
+            cmbProveedores = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -44,20 +48,6 @@
             lblSearch.Size = new Size(45, 15);
             lblSearch.TabIndex = 0;
             lblSearch.Text = "Buscar:";
-
-            // lblFeria
-            lblFeria = new Label();
-            lblFeria.AutoSize = true;
-            lblFeria.Location = new Point(20, 20);
-            lblFeria.Text = "Feria:";
-
-            // cmbFerias
-            cmbFerias = new ComboBox();
-            cmbFerias.Location = new Point(70, 17);
-            cmbFerias.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbFerias.Size = new Size(200, 23);
-            cmbFerias.SelectedIndexChanged += cmbFerias_SelectedIndexChanged;
-
             // 
             // txtBuscar
             // 
@@ -78,11 +68,11 @@
             // dgvProductos
             // 
             dgvProductos.AllowUserToAddRows = false;
-            dgvProductos.Location = new Point(20, 55);
+            dgvProductos.Location = new Point(20, 83);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.Size = new Size(740, 380);
+            dgvProductos.Size = new Size(740, 352);
             dgvProductos.TabIndex = 3;
             // 
             // btnAgregar
@@ -94,11 +84,50 @@
             btnAgregar.Text = "Agregar al Carrito";
             btnAgregar.Click += BtnAgregar_Click;
             // 
+            // lblFeria
+            // 
+            lblFeria.AutoSize = true;
+            lblFeria.Location = new Point(20, 20);
+            lblFeria.Name = "lblFeria";
+            lblFeria.Size = new Size(35, 15);
+            lblFeria.TabIndex = 5;
+            lblFeria.Text = "Feria:";
+            // 
+            // cmbFerias
+            // 
+            cmbFerias.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFerias.Location = new Point(90, 17);
+            cmbFerias.Name = "cmbFerias";
+            cmbFerias.Size = new Size(200, 23);
+            cmbFerias.TabIndex = 6;
+            cmbFerias.SelectedIndexChanged += cmbFerias_SelectedIndexChanged;
+            // 
+            // lblProveedor
+            // 
+            lblProveedor.AutoSize = true;
+            lblProveedor.Location = new Point(20, 51);
+            lblProveedor.Name = "lblProveedor";
+            lblProveedor.Size = new Size(64, 15);
+            lblProveedor.TabIndex = 7;
+            lblProveedor.Text = "Proveedor:";
+            lblProveedor.Click += label1_Click;
+            // 
+            // cmbProveedores
+            // 
+            cmbProveedores.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbProveedores.Location = new Point(90, 48);
+            cmbProveedores.Name = "cmbProveedores";
+            cmbProveedores.Size = new Size(200, 23);
+            cmbProveedores.TabIndex = 8;
+            cmbProveedores.SelectedIndexChanged += cmbProveedores_SelectedIndexChanged;
+            // 
             // FrmCatalogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(780, 500);
+            Controls.Add(lblProveedor);
+            Controls.Add(cmbProveedores);
             Controls.Add(lblSearch);
             Controls.Add(txtBuscar);
             Controls.Add(btnBuscar);
@@ -110,6 +139,7 @@
             Name = "FrmCatalogo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCatalogo";
+            Load += FrmCatalogoCarga;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -123,5 +153,7 @@
         private Button btnAgregar;
         private Label lblFeria;
         private ComboBox cmbFerias;
+        private Label lblProveedor;
+        private ComboBox cmbProveedores;
     }
 }

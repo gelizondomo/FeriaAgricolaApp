@@ -1,0 +1,272 @@
+[
+  {
+    "Id": 1,
+    "UsuarioId": 1,
+    "Provincia": "Heredia",
+    "Canton": "Central",
+    "Distrito": "Bernardo Benavides",
+    "DireccionCompleta": "Casa 124, La Esperanza, Bernardo Benavides",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 2,
+    "UsuarioId": 1,
+    "Provincia": "Cartago",
+    "Canton": "Paraiso",
+    "Distrito": "Paraiso Centro",
+    "DireccionCompleta": "Urbanizacion La Pradera, torre B, apto 3",
+    "EsPrincipal": false
+  },
+  {
+    "Id": 3,
+    "UsuarioId": 2,
+    "Provincia": "Alajuela",
+    "Canton": "Grecia",
+    "Distrito": "La Arena",
+    "DireccionCompleta": "Calle Principal 45, La Arena (parte norte)",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 4,
+    "UsuarioId": 3,
+    "Provincia": "Puntarenas",
+    "Canton": "Osa",
+    "Distrito": "Puerto Cortes",
+    "DireccionCompleta": "Residencial Los Pinos, casa 23",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 5,
+    "UsuarioId": 3,
+    "Provincia": "Heredia",
+    "Canton": "Heredia",
+    "Distrito": "Mercedes Norte",
+    "DireccionCompleta": "Calle D, contiguo a la pulperia",
+    "EsPrincipal": false
+  },
+  {
+    "Id": 6,
+    "UsuarioId": 4,
+    "Provincia": "San Jose",
+    "Canton": "Escazu",
+    "Distrito": "Guachipelin",
+    "DireccionCompleta": "Barrio Centro, frente a la escuela",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 7,
+    "UsuarioId": 5,
+    "Provincia": "Alajuela",
+    "Canton": "Grecia",
+    "Distrito": "La Arena",
+    "DireccionCompleta": "Entrada principal, 50m norte, porton negro",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 8,
+    "UsuarioId": 6,
+    "Provincia": "Cartago",
+    "Canton": "Cartago",
+    "Distrito": "Oriental",
+    "DireccionCompleta": "Avenida 1, 25m oeste del parque",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 9,
+    "UsuarioId": 7,
+    "Provincia": "Heredia",
+    "Canton": "Barva",
+    "Distrito": "Barva Centro",
+    "DireccionCompleta": "Barrio Centro, frente a la escuela",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 10,
+    "UsuarioId": 7,
+    "Provincia": "Heredia",
+    "Canton": "Heredia",
+    "Distrito": "Mercedes Norte",
+    "DireccionCompleta": "Urbanizacion La Pradera, torre B, apto 3",
+    "EsPrincipal": false
+  },
+  {
+    "Id": 11,
+    "UsuarioId": 8,
+    "Provincia": "San Jose",
+    "Canton": "San Jose",
+    "Distrito": "Pavas",
+    "DireccionCompleta": "Urbanizacion La Pradera, torre B, apto 3",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 12,
+    "UsuarioId": 9,
+    "Provincia": "Puntarenas",
+    "Canton": "Osa",
+    "Distrito": "Puerto Cortes",
+    "DireccionCompleta": "Calle 4, 100m sur de la iglesia",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 13,
+    "UsuarioId": 10,
+    "Provincia": "San Jose",
+    "Canton": "San Jose",
+    "Distrito": "Zapote",
+    "DireccionCompleta": "Calle D, contiguo a la pulperia",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 14,
+    "UsuarioId": 11,
+    "Provincia": "San Jose",
+    "Canton": "San Jose",
+    "Distrito": "Pavas",
+    "DireccionCompleta": "Entrada principal, 50m norte, porton negro",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 15,
+    "UsuarioId": 12,
+    "Provincia": "Alajuela",
+    "Canton": "Grecia",
+    "Distrito": "La Arena",
+    "DireccionCompleta": "Barrio Centro, frente a la escuela",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 16,
+    "UsuarioId": 13,
+    "Provincia": "Alajuela",
+    "Canton": "Grecia",
+    "Distrito": "La Arena",
+    "DireccionCompleta": "Entrada principal, 50m norte, porton negro",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 17,
+    "UsuarioId": 14,
+    "Provincia": "Cartago",
+    "Canton": "Cartago",
+    "Distrito": "Oriental",
+    "DireccionCompleta": "Avenida 1, 25m oeste del parque",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 18,
+    "UsuarioId": 15,
+    "Provincia": "San Jose",
+    "Canton": "San Jose",
+    "Distrito": "Zapote",
+    "DireccionCompleta": "Calle 4, 100m sur de la iglesia",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 19,
+    "UsuarioId": 16,
+    "Provincia": "Limon",
+    "Canton": "Pococi",
+    "Distrito": "Guapiles",
+    "DireccionCompleta": "Entrada principal, 50m norte, porton negro",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 20,
+    "UsuarioId": 17,
+    "Provincia": "Guanacaste",
+    "Canton": "Nicoya",
+    "Distrito": "Nicoya Centro",
+    "DireccionCompleta": "Avenida 1, 25m oeste del parque",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 21,
+    "UsuarioId": 18,
+    "Provincia": "Heredia",
+    "Canton": "Heredia",
+    "Distrito": "Mercedes Norte",
+    "DireccionCompleta": "Calle D, contiguo a la pulperia",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 22,
+    "UsuarioId": 19,
+    "Provincia": "San Jose",
+    "Canton": "Escazu",
+    "Distrito": "Guachipelin",
+    "DireccionCompleta": "Avenida 1, 25m oeste del parque",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 23,
+    "UsuarioId": 20,
+    "Provincia": "Cartago",
+    "Canton": "Paraiso",
+    "Distrito": "Paraiso Centro",
+    "DireccionCompleta": "Barrio Centro, frente a la escuela",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 24,
+    "UsuarioId": 21,
+    "Provincia": "Heredia",
+    "Canton": "Barva",
+    "Distrito": "Barva Centro",
+    "DireccionCompleta": "Avenida 1, 25m oeste del parque",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 25,
+    "UsuarioId": 22,
+    "Provincia": "San Jose",
+    "Canton": "San Jose",
+    "Distrito": "Zapote",
+    "DireccionCompleta": "Calle 4, 100m sur de la iglesia",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 26,
+    "UsuarioId": 23,
+    "Provincia": "Heredia",
+    "Canton": "Central",
+    "Distrito": "Bernardo Benavides",
+    "DireccionCompleta": "Calle Principal 45, La Arena (parte norte)",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 27,
+    "UsuarioId": 24,
+    "Provincia": "Cartago",
+    "Canton": "Cartago",
+    "Distrito": "Oriental",
+    "DireccionCompleta": "Urbanizacion La Pradera, torre B, apto 3",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 28,
+    "UsuarioId": 25,
+    "Provincia": "San Jose",
+    "Canton": "San Jose",
+    "Distrito": "Pavas",
+    "DireccionCompleta": "Residencial Los Pinos, casa 23",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 29,
+    "UsuarioId": 26,
+    "Provincia": "Puntarenas",
+    "Canton": "Osa",
+    "Distrito": "Puerto Cortes",
+    "DireccionCompleta": "Calle 4, 100m sur de la iglesia",
+    "EsPrincipal": true
+  },
+  {
+    "Id": 30,
+    "UsuarioId": 27,
+    "Provincia": "San Jose",
+    "Canton": "San Jose",
+    "Distrito": "Zapote",
+    "DireccionCompleta": "Barrio Centro, frente a la escuela",
+    "EsPrincipal": true
+  }
+]

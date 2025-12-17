@@ -1,7 +1,7 @@
 ﻿using FeriaAgricolaApp.Application;
 using FeriaAgricolaApp.Domain;
 
-namespace FeriaAgricolaApp.Presentation.Controllers
+namespace FeriaAgricolaApp.Application.Controllers
 {
     public class LoginController
     {

@@ -53,14 +53,5 @@ namespace FeriaAgricolaApp.Domain
         /// </value>
         public int ProveedorId { get; set; } = 0;
 
-
-        /// <summary>
-        /// Gets or sets del feria id.
-        /// </summary>
-        /// <value>
-        /// The feria id.
-        /// </value>
-        public int FeriaId { get; set; }
-
     }
 }

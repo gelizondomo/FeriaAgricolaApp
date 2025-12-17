@@ -1,0 +1,186 @@
+﻿@page "/catalogo"
+@using FeriaAgricolaApp.Application.Controllers
+@using FeriaAgricolaApp.Domain
+@using FeriaAgricolaApp.Web.Components.Services
+@inject CatalogoController CatalogoController
+@inject CarritoController CarritoController
+@inject DireccionService DireccionService
+@inject AppState State
+
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+<h3>Catálogo de Productos</h3>
+
+@if (State.UsuarioActual == null)
+{
+    <p>Debe iniciar sesión.</p>
+}
+else
+{
+    <!-- ================= FERIA ================= -->
+    <div class="mb-3">
+        <label class="form-label">Feria</label>
+        <select class="form-select" @onchange="OnFeriaChanged">
+            <option value="">-- Seleccione una feria --</option>
+            @foreach (var f in ferias)
+            {
+                <option value="@f.Id">@f.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <!-- ================= PROVEEDOR ================= -->
+    @if (proveedores.Any())
+    {
+        <div class="mb-3">
+            <label class="form-label">Proveedor</label>
+            <select class="form-select" @onchange="OnProveedorChanged">
+                <option value="0">Todos los proveedores</option>
+                @foreach (var p in proveedores)
+                {
+                    <option value="@p.Id">@p.Nombre</option>
+                }
+            </select>
+        </div>
+    }
+
+    <!-- ================= BUSCAR ================= -->
+    @if (feriaSeleccionadaId > 0)
+    {
+        <div class="mb-3">
+            <label class="form-label">Buscar producto</label>
+            <input class="form-control"
+                   placeholder="Nombre del producto"
+                   @bind="textoBusqueda"
+                   @bind:event="oninput" />
+        </div>
+    }
+
+    <!-- ================= PRODUCTOS ================= -->
+    @if (productos.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Proveedor</th>
+                    <th>Precio</th>
+                    <th>Unidad</th>
+                    <th>Stock</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in productosFiltrados)
+                {
+                    <tr>
+                        <td>@p.Nombre</td>
+                        <td>@CatalogoController.FiltrarPorProveedor(p.ProveedorId)</td>
+                        <td>₡@p.Precio</td>
+                        <td>@p.UnidadMedida</td>
+                        <td>@p.Stock</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary"
+                                    disabled="@(p.Stock <= 0)"
+                                    @onclick="() => AgregarAlCarrito(p)">
+                                Agregar
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else if (feriaSeleccionadaId > 0)
+    {
+        <p>No hay productos disponibles.</p>
+    }
+}
+
+@code
+{
+    // ================= DATOS =================
+    private List<Feria> ferias = new();
+    private List<Proveedor> proveedores = new();
+    private List<Producto> productos = new();
+
+    private int feriaSeleccionadaId;
+    private int proveedorSeleccionadoId;
+
+    private string textoBusqueda = string.Empty;
+
+    // ================= INIT =================
+    protected override void OnInitialized()
+    {
+        if (State.UsuarioActual == null)
+            return;
+
+        CargarFeriasPorProvincia();
+    }
+
+    // ================= FERIAS =================
+    private void CargarFeriasPorProvincia()
+    {
+        var direcciones = DireccionService.ObtenerPorUsuario(State.UsuarioActual!.Id);
+
+        if (!direcciones.Any())
+        {
+            ferias = CatalogoController.ObtenerFerias();
+            return;
+        }
+
+        var principal = direcciones.FirstOrDefault(d => d.EsPrincipal)
+                        ?? direcciones.First();
+
+        ferias = CatalogoController.ObtenerFeriasPorProvincia(principal.Provincia);
+    }
+
+    private void OnFeriaChanged(ChangeEventArgs e)
+    {
+        feriaSeleccionadaId = int.TryParse(e.Value?.ToString(), out var id) ? id : 0;
+
+        if (feriaSeleccionadaId <= 0)
+            return;
+
+        proveedores = CatalogoController.ObtenerProveedoresPorFeria(feriaSeleccionadaId);
+        proveedorSeleccionadoId = 0;
+
+        CargarProductosPorFeria();
+    }
+
+    // ================= PROVEEDORES =================
+    private void OnProveedorChanged(ChangeEventArgs e)
+    {
+        proveedorSeleccionadoId = int.TryParse(e.Value?.ToString(), out var id) ? id : 0;
+    }
+
+    // ================= PRODUCTOS =================
+    private void CargarProductosPorFeria()
+    {
+        productos = CatalogoController.ObtenerProductosPorFeria(feriaSeleccionadaId);
+    }
+
+    private IEnumerable<Producto> productosFiltrados =>
+        productos
+            .Where(p =>
+                (proveedorSeleccionadoId == 0 || p.ProveedorId == proveedorSeleccionadoId) &&
+                (string.IsNullOrWhiteSpace(textoBusqueda)
+                 || p.Nombre.Contains(textoBusqueda, StringComparison.OrdinalIgnoreCase))
+            );
+
+    // ================= CARRITO =================
+    private void AgregarAlCarrito(Producto producto)
+    {
+        if (State.UsuarioActual == null)
+            return;
+
+        CatalogoController.AgregarAlCarrito(
+            usuarioId: State.UsuarioActual.Id,
+            productoId: producto.Id,
+            cantidad: 1
+        );
+
+        // opcional: ir al carrito
+        Nav.NavigateTo("/carrito");
+    }
+}
