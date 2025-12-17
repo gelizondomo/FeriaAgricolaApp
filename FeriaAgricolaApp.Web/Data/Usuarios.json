@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Juan Araya",
+    "Email": "juan@email.com",
+    "Password": "password123",
+    "Telefono": "12345678",
+    "Direcciones": [],
+    "Rol": "Comprador",
+    "Activo": true
+  }
+]

@@ -1,14 +1,12 @@
 ﻿@page "/catalogo"
+@rendermode InteractiveServer
+
 @using FeriaAgricolaApp.Application.Controllers
 @using FeriaAgricolaApp.Domain
-@using FeriaAgricolaApp.Web.Components.Services
 @inject CatalogoController CatalogoController
-@inject CarritoController CarritoController
 @inject DireccionService DireccionService
 @inject AppState State
 
-@inject NavigationManager Nav
-@rendermode InteractiveServer
 <h3>Catálogo de Productos</h3>
 
 @if (State.UsuarioActual == null)
@@ -17,11 +15,13 @@
 }
 else
 {
-    <!-- ================= FERIA ================= -->
+    <!-- ================= FERIAS ================= -->
     <div class="mb-3">
         <label class="form-label">Feria</label>
-        <select class="form-select" @onchange="OnFeriaChanged">
-            <option value="">-- Seleccione una feria --</option>
+        <select class="form-select"
+                value="@feriaSeleccionadaId"
+                @onchange="FeriasChanged">
+            <option value="0">-- Seleccione una feria --</option>
             @foreach (var f in ferias)
             {
                 <option value="@f.Id">@f.Nombre</option>
@@ -29,158 +29,197 @@ else
         </select>
     </div>
 
-    <!-- ================= PROVEEDOR ================= -->
-    @if (proveedores.Any())
-    {
-        <div class="mb-3">
-            <label class="form-label">Proveedor</label>
-            <select class="form-select" @onchange="OnProveedorChanged">
-                <option value="0">Todos los proveedores</option>
-                @foreach (var p in proveedores)
-                {
-                    <option value="@p.Id">@p.Nombre</option>
-                }
-            </select>
-        </div>
-    }
+    <!-- ================= PROVEEDORES ================= -->
+    <div class="mb-3">
+        <label class="form-label">Proveedor</label>
+        <select class="form-select"
+                value="@proveedorSeleccionadoId"
+                @onchange="ProveedoresChanged">
+            @foreach (var p in proveedores)
+            {
+                <option value="@p.Id">@p.Nombre</option>
+            }
+        </select>
+    </div>
 
     <!-- ================= BUSCAR ================= -->
-    @if (feriaSeleccionadaId > 0)
-    {
-        <div class="mb-3">
-            <label class="form-label">Buscar producto</label>
-            <input class="form-control"
-                   placeholder="Nombre del producto"
-                   @bind="textoBusqueda"
-                   @bind:event="oninput" />
-        </div>
-    }
+    <div class="mb-3">
+        <label class="form-label">Buscar producto</label>
+        <input class="form-control"
+               placeholder="Nombre del producto"
+               @bind="textoBusqueda" />
+        <button class="btn btn-secondary mt-2"
+                @onclick="BuscarProductos">
+            Buscar
+        </button>
+    </div>
 
     <!-- ================= PRODUCTOS ================= -->
-    @if (productos.Any())
-    {
-        <table class="table table-striped">
-            <thead>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Proveedor</th>
+                <th>Precio</th>
+                <th>Unidad</th>
+                <th>Stock</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in productos)
+            {
                 <tr>
-                    <th>Producto</th>
-                    <th>Proveedor</th>
-                    <th>Precio</th>
-                    <th>Unidad</th>
-                    <th>Stock</th>
-                    <th></th>
+                    <td>@p.Nombre</td>
+                    <td>@NombreProveedor(p.ProveedorId)</td>
+                    <td>₡@p.Precio</td>
+                    <td>@p.UnidadMedida</td>
+                    <td>@p.Stock</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary"
+                                disabled="@(p.Stock <= 0)"
+                                @onclick="() => AgregarAlCarrito(p)">
+                            Agregar
+                        </button>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var p in productosFiltrados)
-                {
-                    <tr>
-                        <td>@p.Nombre</td>
-                        <td>@CatalogoController.FiltrarPorProveedor(p.ProveedorId)</td>
-                        <td>₡@p.Precio</td>
-                        <td>@p.UnidadMedida</td>
-                        <td>@p.Stock</td>
-                        <td>
-                            <button class="btn btn-sm btn-primary"
-                                    disabled="@(p.Stock <= 0)"
-                                    @onclick="() => AgregarAlCarrito(p)">
-                                Agregar
-                            </button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-    else if (feriaSeleccionadaId > 0)
-    {
-        <p>No hay productos disponibles.</p>
-    }
+            }
+        </tbody>
+    </table>
 }
 
 @code
 {
-    // ================= DATOS =================
+    // ================= ESTADO =================
     private List<Feria> ferias = new();
     private List<Proveedor> proveedores = new();
     private List<Producto> productos = new();
 
     private int feriaSeleccionadaId;
     private int proveedorSeleccionadoId;
-
     private string textoBusqueda = string.Empty;
 
-    // ================= INIT =================
+    // ================= INIT (equivale a Form_Load) =================
     protected override void OnInitialized()
     {
         if (State.UsuarioActual == null)
             return;
 
-        CargarFeriasPorProvincia();
+        CargarFerias();
     }
 
     // ================= FERIAS =================
-    private void CargarFeriasPorProvincia()
+    private void CargarFerias()
     {
         var direcciones = DireccionService.ObtenerPorUsuario(State.UsuarioActual!.Id);
 
         if (!direcciones.Any())
         {
             ferias = CatalogoController.ObtenerFerias();
-            return;
+        }
+        else
+        {
+            var principal = direcciones.FirstOrDefault(d => d.EsPrincipal)
+                            ?? direcciones.First();
+
+            ferias = CatalogoController
+                .ObtenerFeriasPorProvincia(principal.Provincia?.Trim() ?? "");
         }
 
-        var principal = direcciones.FirstOrDefault(d => d.EsPrincipal)
-                        ?? direcciones.First();
-
-        ferias = CatalogoController.ObtenerFeriasPorProvincia(principal.Provincia);
+        if (ferias.Any())
+        {
+            feriaSeleccionadaId = ferias[0].Id;
+            CargarProveedoresPorFeria(feriaSeleccionadaId);
+            CargarProductosPorFeria(feriaSeleccionadaId);
+        }
     }
 
-    private void OnFeriaChanged(ChangeEventArgs e)
+    private void FeriasChanged(ChangeEventArgs e)
     {
         feriaSeleccionadaId = int.TryParse(e.Value?.ToString(), out var id) ? id : 0;
 
         if (feriaSeleccionadaId <= 0)
+        {
+            proveedores.Clear();
+            productos.Clear();
+            proveedorSeleccionadoId = 0;
+            StateHasChanged();
             return;
+        }
 
-        proveedores = CatalogoController.ObtenerProveedoresPorFeria(feriaSeleccionadaId);
+        // Cargar proveedores (con "Todos")
+        proveedores = CatalogoController.ObtenerProveedoresPorFeria(feriaSeleccionadaId) ?? new List<Proveedor>();
+        proveedores.Insert(0, new Proveedor { Id = 0, Nombre = "Todos los proveedores" });
         proveedorSeleccionadoId = 0;
 
-        CargarProductosPorFeria();
+        // Cargar productos de la feria
+        productos = CatalogoController.ObtenerProductosPorFeria(feriaSeleccionadaId) ?? new List<Producto>();
+
+        StateHasChanged();
     }
 
     // ================= PROVEEDORES =================
-    private void OnProveedorChanged(ChangeEventArgs e)
+    private void CargarProveedoresPorFeria(int feriaId)
+    {
+        proveedores = CatalogoController.ObtenerProveedoresPorFeria(feriaId);
+
+        proveedores.Insert(0, new Proveedor
+        {
+            Id = 0,
+            Nombre = "Todos los proveedores"
+        });
+
+        proveedorSeleccionadoId = 0;
+    }
+
+    private void ProveedoresChanged(ChangeEventArgs e)
     {
         proveedorSeleccionadoId = int.TryParse(e.Value?.ToString(), out var id) ? id : 0;
+
+        if (proveedorSeleccionadoId == 0)
+        {
+            productos = CatalogoController.ObtenerProductosPorFeria(feriaSeleccionadaId) ?? new List<Producto>();
+        }
+        else
+        {
+            productos = CatalogoController.ObtenerProductosPorProveedor(proveedorSeleccionadoId) ?? new List<Producto>();
+        }
+
+        StateHasChanged();
     }
 
     // ================= PRODUCTOS =================
-    private void CargarProductosPorFeria()
+    private void CargarProductosPorFeria(int feriaId)
     {
-        productos = CatalogoController.ObtenerProductosPorFeria(feriaSeleccionadaId);
+        productos = CatalogoController.ObtenerProductosPorFeria(feriaId);
     }
 
-    private IEnumerable<Producto> productosFiltrados =>
-        productos
-            .Where(p =>
-                (proveedorSeleccionadoId == 0 || p.ProveedorId == proveedorSeleccionadoId) &&
-                (string.IsNullOrWhiteSpace(textoBusqueda)
-                 || p.Nombre.Contains(textoBusqueda, StringComparison.OrdinalIgnoreCase))
-            );
+    private void BuscarProductos()
+    {
+        if (string.IsNullOrWhiteSpace(textoBusqueda))
+        {
+            CargarProductosPorFeria(feriaSeleccionadaId);
+            return;
+        }
+
+        productos = CatalogoController
+            .BuscarProductosPorNombre(textoBusqueda, feriaSeleccionadaId);
+    }
 
     // ================= CARRITO =================
     private void AgregarAlCarrito(Producto producto)
     {
-        if (State.UsuarioActual == null)
-            return;
-
         CatalogoController.AgregarAlCarrito(
-            usuarioId: State.UsuarioActual.Id,
-            productoId: producto.Id,
-            cantidad: 1
+            State.UsuarioActual!.Id,
+            producto.Id
         );
 
-        // opcional: ir al carrito
-        Nav.NavigateTo("/carrito");
+        // Igual que WinForms
+        Console.WriteLine("Producto agregado al carrito");
+    }
+
+    private string NombreProveedor(int proveedorId)
+    {
+        return proveedores.FirstOrDefault(p => p.Id == proveedorId)?.Nombre ?? "N/D";
     }
 }
