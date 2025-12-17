@@ -1,0 +1,1002 @@
+[
+  {
+    "Id": 1,
+    "CodigoFactura": "FAC-20251118-001",
+    "OrdenCompraId": 1001,
+    "UsuarioId": 501,
+    "FechaFactura": "2025-11-18T11:41:38.0000000-06:00",
+    "Total": 3548.97,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 461.37
+  },
+  {
+    "Id": 2,
+    "CodigoFactura": "FAC-20251118-002",
+    "OrdenCompraId": 1002,
+    "UsuarioId": 502,
+    "FechaFactura": "2025-11-16T11:41:38.0000000-06:00",
+    "Total": 1250.45,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 162.56
+  },
+  {
+    "Id": 3,
+    "CodigoFactura": "FAC-20251118-003",
+    "OrdenCompraId": 1003,
+    "UsuarioId": 503,
+    "FechaFactura": "2025-11-01T11:41:38.0000000-06:00",
+    "Total": 4500.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 585.0
+  },
+  {
+    "Id": 4,
+    "CodigoFactura": "FAC-20251118-004",
+    "OrdenCompraId": 1004,
+    "UsuarioId": 504,
+    "FechaFactura": "2025-11-05T11:41:38.0000000-06:00",
+    "Total": 875.5,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 113.82
+  },
+  {
+    "Id": 5,
+    "CodigoFactura": "FAC-20251118-005",
+    "OrdenCompraId": 1005,
+    "UsuarioId": 505,
+    "FechaFactura": "2025-10-25T11:41:38.0000000-06:00",
+    "Total": 2100.25,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 273.03
+  },
+  {
+    "Id": 6,
+    "CodigoFactura": "FAC-20251118-006",
+    "OrdenCompraId": 1006,
+    "UsuarioId": 506,
+    "FechaFactura": "2025-11-10T11:41:38.0000000-06:00",
+    "Total": 3200.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 416.0
+  },
+  {
+    "Id": 7,
+    "CodigoFactura": "FAC-20251118-007",
+    "OrdenCompraId": 1007,
+    "UsuarioId": 507,
+    "FechaFactura": "2025-11-15T11:41:38.0000000-06:00",
+    "Total": 1560.89,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 202.92
+  },
+  {
+    "Id": 8,
+    "CodigoFactura": "FAC-20251118-008",
+    "OrdenCompraId": 1008,
+    "UsuarioId": 508,
+    "FechaFactura": "2025-11-03T11:41:38.0000000-06:00",
+    "Total": 4900.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 637.0
+  },
+  {
+    "Id": 9,
+    "CodigoFactura": "FAC-20251118-009",
+    "OrdenCompraId": 1009,
+    "UsuarioId": 509,
+    "FechaFactura": "2025-10-29T11:41:38.0000000-06:00",
+    "Total": 650.75,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 84.6
+  },
+  {
+    "Id": 10,
+    "CodigoFactura": "FAC-20251118-010",
+    "OrdenCompraId": 1010,
+    "UsuarioId": 510,
+    "FechaFactura": "2025-11-18T11:41:38.0000000-06:00",
+    "Total": 2987.1,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 388.32
+  },
+  {
+    "Id": 11,
+    "CodigoFactura": "FAC-20251118-011",
+    "OrdenCompraId": 1011,
+    "UsuarioId": 511,
+    "FechaFactura": "2025-11-07T11:41:38.0000000-06:00",
+    "Total": 4122.5,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 535.93
+  },
+  {
+    "Id": 12,
+    "CodigoFactura": "FAC-20251118-012",
+    "OrdenCompraId": 1012,
+    "UsuarioId": 512,
+    "FechaFactura": "2025-11-14T11:41:38.0000000-06:00",
+    "Total": 990.25,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 128.73
+  },
+  {
+    "Id": 13,
+    "CodigoFactura": "FAC-20251118-013",
+    "OrdenCompraId": 1013,
+    "UsuarioId": 513,
+    "FechaFactura": "2025-10-20T11:41:38.0000000-06:00",
+    "Total": 1780.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 231.4
+  },
+  {
+    "Id": 14,
+    "CodigoFactura": "FAC-20251118-014",
+    "OrdenCompraId": 1014,
+    "UsuarioId": 514,
+    "FechaFactura": "2025-11-02T11:41:38.0000000-06:00",
+    "Total": 3150.99,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 409.63
+  },
+  {
+    "Id": 15,
+    "CodigoFactura": "FAC-20251118-015",
+    "OrdenCompraId": 1015,
+    "UsuarioId": 515,
+    "FechaFactura": "2025-10-31T11:41:38.0000000-06:00",
+    "Total": 705.4,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 91.7
+  },
+  {
+    "Id": 16,
+    "CodigoFactura": "FAC-20251118-016",
+    "OrdenCompraId": 1016,
+    "UsuarioId": 516,
+    "FechaFactura": "2025-11-17T11:41:38.0000000-06:00",
+    "Total": 4890.1,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 635.71
+  },
+  {
+    "Id": 17,
+    "CodigoFactura": "FAC-20251118-017",
+    "OrdenCompraId": 1017,
+    "UsuarioId": 517,
+    "FechaFactura": "2025-11-11T11:41:38.0000000-06:00",
+    "Total": 1950.0,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 253.5
+  },
+  {
+    "Id": 18,
+    "CodigoFactura": "FAC-20251118-018",
+    "OrdenCompraId": 1018,
+    "UsuarioId": 518,
+    "FechaFactura": "2025-10-23T11:41:38.0000000-06:00",
+    "Total": 2555.55,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 332.22
+  },
+  {
+    "Id": 19,
+    "CodigoFactura": "FAC-20251118-019",
+    "OrdenCompraId": 1019,
+    "UsuarioId": 519,
+    "FechaFactura": "2025-11-08T11:41:38.0000000-06:00",
+    "Total": 510.88,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 66.41
+  },
+  {
+    "Id": 20,
+    "CodigoFactura": "FAC-20251118-020",
+    "OrdenCompraId": 1020,
+    "UsuarioId": 520,
+    "FechaFactura": "2025-11-13T11:41:38.0000000-06:00",
+    "Total": 4015.0,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 521.95
+  },
+  {
+    "Id": 21,
+    "CodigoFactura": "FAC-20251118-021",
+    "OrdenCompraId": 1021,
+    "UsuarioId": 521,
+    "FechaFactura": "2025-11-06T11:41:38.0000000-06:00",
+    "Total": 1400.9,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 182.12
+  },
+  {
+    "Id": 22,
+    "CodigoFactura": "FAC-20251118-022",
+    "OrdenCompraId": 1022,
+    "UsuarioId": 522,
+    "FechaFactura": "2025-10-27T11:41:38.0000000-06:00",
+    "Total": 3870.0,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 503.1
+  },
+  {
+    "Id": 23,
+    "CodigoFactura": "FAC-20251118-023",
+    "OrdenCompraId": 1023,
+    "UsuarioId": 523,
+    "FechaFactura": "2025-11-18T11:41:38.0000000-06:00",
+    "Total": 920.4,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 119.65
+  },
+  {
+    "Id": 24,
+    "CodigoFactura": "FAC-20251118-024",
+    "OrdenCompraId": 1024,
+    "UsuarioId": 524,
+    "FechaFactura": "2025-11-04T11:41:38.0000000-06:00",
+    "Total": 4999.99,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 649.99
+  },
+  {
+    "Id": 25,
+    "CodigoFactura": "FAC-20251118-025",
+    "OrdenCompraId": 1025,
+    "UsuarioId": 525,
+    "FechaFactura": "2025-10-26T11:41:38.0000000-06:00",
+    "Total": 600.5,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 78.07
+  },
+  {
+    "Id": 26,
+    "CodigoFactura": "FAC-20251118-026",
+    "OrdenCompraId": 1026,
+    "UsuarioId": 526,
+    "FechaFactura": "2025-11-09T11:41:38.0000000-06:00",
+    "Total": 2880.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 374.4
+  },
+  {
+    "Id": 27,
+    "CodigoFactura": "FAC-20251118-027",
+    "OrdenCompraId": 1027,
+    "UsuarioId": 527,
+    "FechaFactura": "2025-11-14T11:41:38.0000000-06:00",
+    "Total": 1300.75,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 169.1
+  },
+  {
+    "Id": 28,
+    "CodigoFactura": "FAC-20251118-028",
+    "OrdenCompraId": 1028,
+    "UsuarioId": 528,
+    "FechaFactura": "2025-10-22T11:41:38.0000000-06:00",
+    "Total": 4350.5,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 565.57
+  },
+  {
+    "Id": 29,
+    "CodigoFactura": "FAC-20251118-029",
+    "OrdenCompraId": 1029,
+    "UsuarioId": 529,
+    "FechaFactura": "2025-11-01T11:41:38.0000000-06:00",
+    "Total": 789.25,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 102.6
+  },
+  {
+    "Id": 30,
+    "CodigoFactura": "FAC-20251118-030",
+    "OrdenCompraId": 1030,
+    "UsuarioId": 530,
+    "FechaFactura": "2025-11-16T11:41:38.0000000-06:00",
+    "Total": 2200.0,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 286.0
+  },
+  {
+    "Id": 31,
+    "CodigoFactura": "FAC-20251118-031",
+    "OrdenCompraId": 1031,
+    "UsuarioId": 531,
+    "FechaFactura": "2025-11-07T11:41:38.0000000-06:00",
+    "Total": 3760.1,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 488.81
+  },
+  {
+    "Id": 32,
+    "CodigoFactura": "FAC-20251118-032",
+    "OrdenCompraId": 1032,
+    "UsuarioId": 532,
+    "FechaFactura": "2025-10-24T11:41:38.0000000-06:00",
+    "Total": 1050.99,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 136.63
+  },
+  {
+    "Id": 33,
+    "CodigoFactura": "FAC-20251118-033",
+    "OrdenCompraId": 1033,
+    "UsuarioId": 533,
+    "FechaFactura": "2025-11-12T11:41:38.0000000-06:00",
+    "Total": 4600.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 598.0
+  },
+  {
+    "Id": 34,
+    "CodigoFactura": "FAC-20251118-034",
+    "OrdenCompraId": 1034,
+    "UsuarioId": 534,
+    "FechaFactura": "2025-10-30T11:41:38.0000000-06:00",
+    "Total": 555.55,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 72.22
+  },
+  {
+    "Id": 35,
+    "CodigoFactura": "FAC-20251118-035",
+    "OrdenCompraId": 1035,
+    "UsuarioId": 535,
+    "FechaFactura": "2025-11-05T11:41:38.0000000-06:00",
+    "Total": 3330.3,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 432.94
+  },
+  {
+    "Id": 36,
+    "CodigoFactura": "FAC-20251118-036",
+    "OrdenCompraId": 1036,
+    "UsuarioId": 536,
+    "FechaFactura": "2025-11-17T11:41:38.0000000-06:00",
+    "Total": 1700.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 221.0
+  },
+  {
+    "Id": 37,
+    "CodigoFactura": "FAC-20251118-037",
+    "OrdenCompraId": 1037,
+    "UsuarioId": 537,
+    "FechaFactura": "2025-11-13T11:41:38.0000000-06:00",
+    "Total": 4250.75,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 552.6
+  },
+  {
+    "Id": 38,
+    "CodigoFactura": "FAC-20251118-038",
+    "OrdenCompraId": 1038,
+    "UsuarioId": 538,
+    "FechaFactura": "2025-10-21T11:41:38.0000000-06:00",
+    "Total": 820.8,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 106.7
+  },
+  {
+    "Id": 39,
+    "CodigoFactura": "FAC-20251118-039",
+    "OrdenCompraId": 1039,
+    "UsuarioId": 539,
+    "FechaFactura": "2025-11-08T11:41:38.0000000-06:00",
+    "Total": 3900.0,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 507.0
+  },
+  {
+    "Id": 40,
+    "CodigoFactura": "FAC-20251118-040",
+    "OrdenCompraId": 1040,
+    "UsuarioId": 540,
+    "FechaFactura": "2025-11-03T11:41:38.0000000-06:00",
+    "Total": 1500.9,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 195.12
+  },
+  {
+    "Id": 41,
+    "CodigoFactura": "FAC-20251118-041",
+    "OrdenCompraId": 1041,
+    "UsuarioId": 541,
+    "FechaFactura": "2025-10-28T11:41:38.0000000-06:00",
+    "Total": 4444.44,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 577.78
+  },
+  {
+    "Id": 42,
+    "CodigoFactura": "FAC-20251118-042",
+    "OrdenCompraId": 1042,
+    "UsuarioId": 542,
+    "FechaFactura": "2025-11-15T11:41:38.0000000-06:00",
+    "Total": 680.1,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 88.41
+  },
+  {
+    "Id": 43,
+    "CodigoFactura": "FAC-20251118-043",
+    "OrdenCompraId": 1043,
+    "UsuarioId": 543,
+    "FechaFactura": "2025-11-10T11:41:38.0000000-06:00",
+    "Total": 2700.5,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 351.07
+  },
+  {
+    "Id": 44,
+    "CodigoFactura": "FAC-20251118-044",
+    "OrdenCompraId": 1044,
+    "UsuarioId": 544,
+    "FechaFactura": "2025-10-25T11:41:38.0000000-06:00",
+    "Total": 1111.11,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 144.44
+  },
+  {
+    "Id": 45,
+    "CodigoFactura": "FAC-20251118-045",
+    "OrdenCompraId": 1045,
+    "UsuarioId": 545,
+    "FechaFactura": "2025-11-02T11:41:38.0000000-06:00",
+    "Total": 4750.0,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 617.5
+  },
+  {
+    "Id": 46,
+    "CodigoFactura": "FAC-20251118-046",
+    "OrdenCompraId": 1046,
+    "UsuarioId": 546,
+    "FechaFactura": "2025-11-06T11:41:38.0000000-06:00",
+    "Total": 850.25,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 110.53
+  },
+  {
+    "Id": 47,
+    "CodigoFactura": "FAC-20251118-047",
+    "OrdenCompraId": 1047,
+    "UsuarioId": 547,
+    "FechaFactura": "2025-10-23T11:41:38.0000000-06:00",
+    "Total": 3050.0,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 396.5
+  },
+  {
+    "Id": 48,
+    "CodigoFactura": "FAC-20251118-048",
+    "OrdenCompraId": 1048,
+    "UsuarioId": 548,
+    "FechaFactura": "2025-11-18T11:41:38.0000000-06:00",
+    "Total": 500.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 65.0
+  },
+  {
+    "Id": 49,
+    "CodigoFactura": "FAC-20251118-049",
+    "OrdenCompraId": 1049,
+    "UsuarioId": 549,
+    "FechaFactura": "2025-11-04T11:41:38.0000000-06:00",
+    "Total": 2020.2,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 262.63
+  },
+  {
+    "Id": 50,
+    "CodigoFactura": "FAC-20251118-050",
+    "OrdenCompraId": 1050,
+    "UsuarioId": 550,
+    "FechaFactura": "2025-10-31T11:41:38.0000000-06:00",
+    "Total": 3600.89,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 468.12
+  },
+  {
+    "Id": 51,
+    "CodigoFactura": "FAC-20251118-051",
+    "OrdenCompraId": 1051,
+    "UsuarioId": 551,
+    "FechaFactura": "2025-11-12T11:41:38.0000000-06:00",
+    "Total": 1490.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 193.7
+  },
+  {
+    "Id": 52,
+    "CodigoFactura": "FAC-20251118-052",
+    "OrdenCompraId": 1052,
+    "UsuarioId": 552,
+    "FechaFactura": "2025-11-07T11:41:38.0000000-06:00",
+    "Total": 4100.25,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 533.03
+  },
+  {
+    "Id": 53,
+    "CodigoFactura": "FAC-20251118-053",
+    "OrdenCompraId": 1053,
+    "UsuarioId": 553,
+    "FechaFactura": "2025-10-24T11:41:38.0000000-06:00",
+    "Total": 987.65,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 128.39
+  },
+  {
+    "Id": 54,
+    "CodigoFactura": "FAC-20251118-054",
+    "OrdenCompraId": 1054,
+    "UsuarioId": 554,
+    "FechaFactura": "2025-11-16T11:41:38.0000000-06:00",
+    "Total": 3210.0,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 417.3
+  },
+  {
+    "Id": 55,
+    "CodigoFactura": "FAC-20251118-055",
+    "OrdenCompraId": 1055,
+    "UsuarioId": 555,
+    "FechaFactura": "2025-11-01T11:41:38.0000000-06:00",
+    "Total": 777.77,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 101.11
+  },
+  {
+    "Id": 56,
+    "CodigoFactura": "FAC-20251118-056",
+    "OrdenCompraId": 1056,
+    "UsuarioId": 556,
+    "FechaFactura": "2025-11-14T11:41:38.0000000-06:00",
+    "Total": 4500.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 585.0
+  },
+  {
+    "Id": 57,
+    "CodigoFactura": "FAC-20251118-057",
+    "OrdenCompraId": 1057,
+    "UsuarioId": 557,
+    "FechaFactura": "2025-10-20T11:41:38.0000000-06:00",
+    "Total": 1800.0,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 234.0
+  },
+  {
+    "Id": 58,
+    "CodigoFactura": "FAC-20251118-058",
+    "OrdenCompraId": 1058,
+    "UsuarioId": 558,
+    "FechaFactura": "2025-11-09T11:41:38.0000000-06:00",
+    "Total": 2999.99,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 389.99
+  },
+  {
+    "Id": 59,
+    "CodigoFactura": "FAC-20251118-059",
+    "OrdenCompraId": 1059,
+    "UsuarioId": 559,
+    "FechaFactura": "2025-11-03T11:41:38.0000000-06:00",
+    "Total": 600.0,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 78.0
+  },
+  {
+    "Id": 60,
+    "CodigoFactura": "FAC-20251118-060",
+    "OrdenCompraId": 1060,
+    "UsuarioId": 560,
+    "FechaFactura": "2025-10-27T11:41:38.0000000-06:00",
+    "Total": 4000.5,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 520.07
+  },
+  {
+    "Id": 61,
+    "CodigoFactura": "FAC-20251118-061",
+    "OrdenCompraId": 1061,
+    "UsuarioId": 561,
+    "FechaFactura": "2025-11-11T11:41:38.0000000-06:00",
+    "Total": 1255.25,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 163.18
+  },
+  {
+    "Id": 62,
+    "CodigoFactura": "FAC-20251118-062",
+    "OrdenCompraId": 1062,
+    "UsuarioId": 562,
+    "FechaFactura": "2025-10-29T11:41:38.0000000-06:00",
+    "Total": 3750.0,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 487.5
+  },
+  {
+    "Id": 63,
+    "CodigoFactura": "FAC-20251118-063",
+    "OrdenCompraId": 1063,
+    "UsuarioId": 563,
+    "FechaFactura": "2025-11-18T11:41:38.0000000-06:00",
+    "Total": 950.99,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 123.63
+  },
+  {
+    "Id": 64,
+    "CodigoFactura": "FAC-20251118-064",
+    "OrdenCompraId": 1064,
+    "UsuarioId": 564,
+    "FechaFactura": "2025-11-05T11:41:38.0000000-06:00",
+    "Total": 4900.0,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 637.0
+  },
+  {
+    "Id": 65,
+    "CodigoFactura": "FAC-20251118-065",
+    "OrdenCompraId": 1065,
+    "UsuarioId": 565,
+    "FechaFactura": "2025-10-26T11:41:38.0000000-06:00",
+    "Total": 700.0,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 91.0
+  },
+  {
+    "Id": 66,
+    "CodigoFactura": "FAC-20251118-066",
+    "OrdenCompraId": 1066,
+    "UsuarioId": 566,
+    "FechaFactura": "2025-11-13T11:41:38.0000000-06:00",
+    "Total": 3100.1,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 403.01
+  },
+  {
+    "Id": 67,
+    "CodigoFactura": "FAC-20251118-067",
+    "OrdenCompraId": 1067,
+    "UsuarioId": 567,
+    "FechaFactura": "2025-11-02T11:41:38.0000000-06:00",
+    "Total": 1650.0,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 214.5
+  },
+  {
+    "Id": 68,
+    "CodigoFactura": "FAC-20251118-068",
+    "OrdenCompraId": 1068,
+    "UsuarioId": 568,
+    "FechaFactura": "2025-10-31T11:41:38.0000000-06:00",
+    "Total": 4400.44,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 572.06
+  },
+  {
+    "Id": 69,
+    "CodigoFactura": "FAC-20251118-069",
+    "OrdenCompraId": 1069,
+    "UsuarioId": 569,
+    "FechaFactura": "2025-11-08T11:41:38.0000000-06:00",
+    "Total": 515.2,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 66.98
+  },
+  {
+    "Id": 70,
+    "CodigoFactura": "FAC-20251118-070",
+    "OrdenCompraId": 1070,
+    "UsuarioId": 570,
+    "FechaFactura": "2025-10-22T11:41:38.0000000-06:00",
+    "Total": 2600.75,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 338.1
+  },
+  {
+    "Id": 71,
+    "CodigoFactura": "FAC-20251118-071",
+    "OrdenCompraId": 1071,
+    "UsuarioId": 571,
+    "FechaFactura": "2025-11-17T11:41:38.0000000-06:00",
+    "Total": 3950.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 513.5
+  },
+  {
+    "Id": 72,
+    "CodigoFactura": "FAC-20251118-072",
+    "OrdenCompraId": 1072,
+    "UsuarioId": 572,
+    "FechaFactura": "2025-11-06T11:41:38.0000000-06:00",
+    "Total": 1010.1,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 131.31
+  },
+  {
+    "Id": 73,
+    "CodigoFactura": "FAC-20251118-073",
+    "OrdenCompraId": 1073,
+    "UsuarioId": 573,
+    "FechaFactura": "2025-10-25T11:41:38.0000000-06:00",
+    "Total": 4700.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 611.0
+  },
+  {
+    "Id": 74,
+    "CodigoFactura": "FAC-20251118-074",
+    "OrdenCompraId": 1074,
+    "UsuarioId": 574,
+    "FechaFactura": "2025-11-01T11:41:38.0000000-06:00",
+    "Total": 888.88,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 115.55
+  },
+  {
+    "Id": 75,
+    "CodigoFactura": "FAC-20251118-075",
+    "OrdenCompraId": 1075,
+    "UsuarioId": 575,
+    "FechaFactura": "2025-11-10T11:41:38.0000000-06:00",
+    "Total": 2300.25,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 299.03
+  },
+  {
+    "Id": 76,
+    "CodigoFactura": "FAC-20251118-076",
+    "OrdenCompraId": 1076,
+    "UsuarioId": 576,
+    "FechaFactura": "2025-11-15T11:41:38.0000000-06:00",
+    "Total": 3300.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 429.0
+  },
+  {
+    "Id": 77,
+    "CodigoFactura": "FAC-20251118-077",
+    "OrdenCompraId": 1077,
+    "UsuarioId": 577,
+    "FechaFactura": "2025-10-29T11:41:38.0000000-06:00",
+    "Total": 1750.5,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 227.57
+  },
+  {
+    "Id": 78,
+    "CodigoFactura": "FAC-20251118-078",
+    "OrdenCompraId": 1078,
+    "UsuarioId": 578,
+    "FechaFactura": "2025-11-04T11:41:38.0000000-06:00",
+    "Total": 4800.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 624.0
+  },
+  {
+    "Id": 79,
+    "CodigoFactura": "FAC-20251118-079",
+    "OrdenCompraId": 1079,
+    "UsuarioId": 579,
+    "FechaFactura": "2025-10-21T11:41:38.0000000-06:00",
+    "Total": 580.99,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 75.53
+  },
+  {
+    "Id": 80,
+    "CodigoFactura": "FAC-20251118-080",
+    "OrdenCompraId": 1080,
+    "UsuarioId": 580,
+    "FechaFactura": "2025-11-13T11:41:38.0000000-06:00",
+    "Total": 4050.15,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 526.52
+  },
+  {
+    "Id": 81,
+    "CodigoFactura": "FAC-20251118-081",
+    "OrdenCompraId": 1081,
+    "UsuarioId": 581,
+    "FechaFactura": "2025-11-07T11:41:38.0000000-06:00",
+    "Total": 1999.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 259.87
+  },
+  {
+    "Id": 82,
+    "CodigoFactura": "FAC-20251118-082",
+    "OrdenCompraId": 1082,
+    "UsuarioId": 582,
+    "FechaFactura": "2025-10-23T11:41:38.0000000-06:00",
+    "Total": 3111.11,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 404.44
+  },
+  {
+    "Id": 83,
+    "CodigoFactura": "FAC-20251118-083",
+    "OrdenCompraId": 1083,
+    "UsuarioId": 583,
+    "FechaFactura": "2025-11-18T11:41:38.0000000-06:00",
+    "Total": 900.5,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 117.07
+  },
+  {
+    "Id": 84,
+    "CodigoFactura": "FAC-20251118-084",
+    "OrdenCompraId": 1084,
+    "UsuarioId": 584,
+    "FechaFactura": "2025-11-05T11:41:38.0000000-06:00",
+    "Total": 4650.0,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 604.5
+  },
+  {
+    "Id": 85,
+    "CodigoFactura": "FAC-20251118-085",
+    "OrdenCompraId": 1085,
+    "UsuarioId": 585,
+    "FechaFactura": "2025-10-27T11:41:38.0000000-06:00",
+    "Total": 520.1,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 67.61
+  },
+  {
+    "Id": 86,
+    "CodigoFactura": "FAC-20251118-086",
+    "OrdenCompraId": 1086,
+    "UsuarioId": 586,
+    "FechaFactura": "2025-11-10T11:41:38.0000000-06:00",
+    "Total": 3450.5,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 448.57
+  },
+  {
+    "Id": 87,
+    "CodigoFactura": "FAC-20251118-087",
+    "OrdenCompraId": 1087,
+    "UsuarioId": 587,
+    "FechaFactura": "2025-11-14T11:41:38.0000000-06:00",
+    "Total": 1150.75,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 149.59
+  },
+  {
+    "Id": 88,
+    "CodigoFactura": "FAC-20251118-088",
+    "OrdenCompraId": 1088,
+    "UsuarioId": 588,
+    "FechaFactura": "2025-10-22T11:41:38.0000000-06:00",
+    "Total": 4300.0,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 559.0
+  },
+  {
+    "Id": 89,
+    "CodigoFactura": "FAC-20251118-089",
+    "OrdenCompraId": 1089,
+    "UsuarioId": 589,
+    "FechaFactura": "2025-11-01T11:41:38.0000000-06:00",
+    "Total": 666.66,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 86.67
+  },
+  {
+    "Id": 90,
+    "CodigoFactura": "FAC-20251118-090",
+    "OrdenCompraId": 1090,
+    "UsuarioId": 590,
+    "FechaFactura": "2025-10-30T11:41:38.0000000-06:00",
+    "Total": 2770.1,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 360.11
+  },
+  {
+    "Id": 91,
+    "CodigoFactura": "FAC-20251118-091",
+    "OrdenCompraId": 1091,
+    "UsuarioId": 591,
+    "FechaFactura": "2025-11-17T11:41:38.0000000-06:00",
+    "Total": 3800.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 494.0
+  },
+  {
+    "Id": 92,
+    "CodigoFactura": "FAC-20251118-092",
+    "OrdenCompraId": 1092,
+    "UsuarioId": 592,
+    "FechaFactura": "2025-11-12T11:41:38.0000000-06:00",
+    "Total": 1330.3,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 172.94
+  },
+  {
+    "Id": 93,
+    "CodigoFactura": "FAC-20251118-093",
+    "OrdenCompraId": 1093,
+    "UsuarioId": 593,
+    "FechaFactura": "2025-10-21T11:41:38.0000000-06:00",
+    "Total": 4950.99,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 643.63
+  },
+  {
+    "Id": 94,
+    "CodigoFactura": "FAC-20251118-094",
+    "OrdenCompraId": 1094,
+    "UsuarioId": 594,
+    "FechaFactura": "2025-11-08T11:41:38.0000000-06:00",
+    "Total": 590.8,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 76.8
+  },
+  {
+    "Id": 95,
+    "CodigoFactura": "FAC-20251118-095",
+    "OrdenCompraId": 1095,
+    "UsuarioId": 595,
+    "FechaFactura": "2025-10-24T11:41:38.0000000-06:00",
+    "Total": 2500.5,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 325.07
+  },
+  {
+    "Id": 96,
+    "CodigoFactura": "FAC-20251118-096",
+    "OrdenCompraId": 1096,
+    "UsuarioId": 596,
+    "FechaFactura": "2025-11-09T11:41:38.0000000-06:00",
+    "Total": 3650.0,
+    "DireccionEntrega": "Avenida Central, Mercedes, Heredia",
+    "Impuesto": 474.5
+  },
+  {
+    "Id": 97,
+    "CodigoFactura": "FAC-20251118-097",
+    "OrdenCompraId": 1097,
+    "UsuarioId": 597,
+    "FechaFactura": "2025-11-15T11:41:38.0000000-06:00",
+    "Total": 1400.0,
+    "DireccionEntrega": "Calle 5, San Jos�",
+    "Impuesto": 182.0
+  },
+  {
+    "Id": 98,
+    "CodigoFactura": "FAC-20251118-098",
+    "OrdenCompraId": 1098,
+    "UsuarioId": 598,
+    "FechaFactura": "2025-10-26T11:41:38.0000000-06:00",
+    "Total": 4200.25,
+    "DireccionEntrega": "Residencial Las Flores, Alajuela",
+    "Impuesto": 546.03
+  },
+  {
+    "Id": 99,
+    "CodigoFactura": "FAC-20251118-099",
+    "OrdenCompraId": 1099,
+    "UsuarioId": 599,
+    "FechaFactura": "2025-11-03T11:41:38.0000000-06:00",
+    "Total": 1789.9,
+    "DireccionEntrega": "Barrio Escalante, San Jos�",
+    "Impuesto": 232.69
+  },
+  {
+    "Id": 100,
+    "CodigoFactura": "FAC-20251118-100",
+    "OrdenCompraId": 1100,
+    "UsuarioId": 600,
+    "FechaFactura": "2025-11-11T11:41:38.0000000-06:00",
+    "Total": 4230.15,
+    "DireccionEntrega": "Urbanizaci�n Los �ngeles, Cartago",
+    "Impuesto": 549.92
+  }
+]
