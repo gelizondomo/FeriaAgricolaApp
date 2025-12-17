@@ -1,107 +1,107 @@
-﻿@page "/"
+﻿@inherits LayoutComponentBase
 
-@inherits LayoutComponentBase
 @using FeriaAgricolaApp.Domain
 @inject AppState State
 @inject NavigationManager Nav
 
-@Body
-<div class="top-row px-4 navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="">Feria Agrícola</a>
+<div class="d-flex" style="min-height:100vh">
+
+    <!-- ================= MENÚ ================= -->
+    <nav class="bg-dark text-white p-3" style="width:250px">
+        <div class="navbar navbar-dark">
+            <span class="navbar-brand">Feria Agrícola</span>
+        </div>
+
+        @if (!State.EstaLogueado)
+        {
+            <ul class="nav flex-column mt-3">
+                <li class="nav-item">
+                    <NavLink class="nav-link text-white" href="/login">
+                        Login
+                    </NavLink>
+                </li>
+            </ul>
+        }
+        else
+        {
+            <ul class="nav flex-column mt-3">
+
+                @if (!State.EsAdmin)
+                {
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-white" href="/catalogo">
+                            Catálogo
+                        </NavLink>
+                    </li>
+
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-white" href="/carrito">
+                            Carrito
+                        </NavLink>
+                    </li>
+
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-white" href="/financiero">
+                            Mis compras
+                        </NavLink>
+                    </li>
+                }
+
+                @if (State.EsAdmin)
+                {
+                    <li class="nav-item mt-3">
+                        <span class="text-uppercase fw-bold text-secondary">
+                            Administración
+                        </span>
+                    </li>
+
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-white" href="/admin/usuarios">
+                            Usuarios
+                        </NavLink>
+                    </li>
+
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-white" href="/admin/inventario">
+                            Inventario
+                        </NavLink>
+                    </li>
+
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-white" href="/admin/proveedores">
+                            Proveedores
+                        </NavLink>
+                    </li>
+
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-white" href="/admin/reportes">
+                            Reportes
+                        </NavLink>
+                    </li>
+                }
+
+                <li class="nav-item mt-4">
+                    <button class="btn btn-sm btn-outline-light w-100"
+                            @onclick="CerrarSesion">
+                        Cerrar sesión
+                    </button>
+                </li>
+            </ul>
+        }
+    </nav>
+
+    <!-- ================= CONTENIDO ================= -->
+    <main class="flex-fill bg-light">
+        <div class="container-fluid p-4">
+            @Body
+        </div>
+    </main>
+
 </div>
-
-<div class="nav-menu px-3">
-    @if (!State.EstaLogueado)
-    {
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <NavLink class="nav-link" href="/login" Match="NavLinkMatch.All">
-                    <span class="oi oi-account-login" aria-hidden="true"></span>
-                    Login
-                </NavLink>
-            </li>
-        </ul>
-    }
-    else
-    {
-        <ul class="nav flex-column">
-
-            <!-- ================= COMPRADOR ================= -->
-            @if (!State.EsAdmin)
-            {
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/catalogo">
-                        Catálogo
-                    </NavLink>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/carrito">
-                        Carrito
-                    </NavLink>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/financiero">
-                        Mis compras
-                    </NavLink>
-                </li>
-            }
-
-            <!-- ================= ADMIN ================= -->
-            @if (State.EsAdmin)
-            {
-                <li class="nav-item mt-3">
-                    <span class="text-light fw-bold">Administración</span>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/admin/usuarios">
-                        Usuarios
-                    </NavLink>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/admin/inventario">
-                        Inventario
-                    </NavLink>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/admin/proveedores">
-                        Proveedores
-                    </NavLink>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/admin/reportes">
-                        Reportes
-                    </NavLink>
-                </li>
-            }
-
-            <!-- ================= Cerrar Sesión ================= -->
-            <li class="nav-item mt-3">
-                <button class="btn btn-sm btn-outline-light"
-                        @onclick="CerrarSesion">
-                    Cerrar sesión
-                </button>
-            </li>
-        </ul>
-    }
-</div>
-
-<div id="blazor-error-ui" data-nosnippet>
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
-    <span class="dismiss">🗙</span>
-</div>
-
-@code
-{
+@code {
     private void CerrarSesion()
     {
         State.CerrarSesion();
-        Nav.NavigateTo("/login", true);
+        Nav.NavigateTo("/login");
     }
 }
